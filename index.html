@@ -51,17 +51,31 @@
   </div>
 
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Hero Section - Split Layout with 3D Wheel -->
+  <section class="hero hero--split">
     <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1920&q=85');"></div>
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-subtitle">Delhi's Premier Customization Studio</p>
-      <h1 class="hero-title">Transform Your Drive<br>Into A Statement</h1>
-      <p class="hero-desc">Precision wrapping, paint protection, and bespoke styling for discerning automotive enthusiasts. Rohini, Delhi.</p>
-      <div class="hero-btns">
-        <a href="services.html" class="btn-primary">Explore Services &#8594;</a>
-        <a href="contact.html" class="btn-secondary">Book Consultation</a>
+
+    <div class="hero-split-container">
+      <!-- Left: Text Content -->
+      <div class="hero-text-side">
+        <p class="hero-subtitle">Delhi's Premier Customization Studio</p>
+        <h1 class="hero-title">Transform Your Drive<br>Into A Statement</h1>
+        <p class="hero-desc">Precision wrapping, paint protection, and bespoke styling for discerning automotive enthusiasts. Rohini, Delhi.</p>
+        <div class="hero-btns">
+          <a href="services.html" class="btn-primary">Explore Services &#8594;</a>
+          <a href="contact.html" class="btn-secondary">Book Consultation</a>
+        </div>
+      </div>
+
+      <!-- Right: 3D Alloy Wheel Visual -->
+      <div class="hero-wheel-side" id="wheelContainer">
+        <div class="wheel-glow"></div>
+        <div class="wheel-shadow"></div>
+        <div class="wheel-wrapper" id="wheelWrapper">
+          <img src="assets/images/alloy-wheel-hero.png" alt="Premium Alloy Wheel - Velorix Customs" class="wheel-img" id="wheelImg">
+        </div>
+        <div class="wheel-fog"></div>
       </div>
     </div>
   </section>

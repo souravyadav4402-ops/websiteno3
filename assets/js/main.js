@@ -233,3 +233,76 @@ if ('IntersectionObserver' in window) {
     imgObserver.observe(img);
   });
 }
+
+
+
+// ===== 3D Alloy Wheel - Mouse Parallax Effect =====
+const wheelContainer = document.getElementById('wheelContainer');
+const wheelWrapper = document.getElementById('wheelWrapper');
+
+if (wheelContainer && wheelWrapper) {
+  let wheelRafId = null;
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const lerp = (start, end, factor) => start + (end - start) * factor;
+
+  wheelContainer.addEventListener('mousemove', (e) => {
+    const rect = wheelContainer.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    // Normalize mouse position relative to center (-1 to 1)
+    targetX = ((e.clientX - centerX) / (rect.width / 2)) * 12;
+    targetY = ((e.clientY - centerY) / (rect.height / 2)) * 8;
+  });
+
+  wheelContainer.addEventListener('mouseleave', () => {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  const animateWheel = () => {
+    // Smooth interpolation for buttery movement
+    currentX = lerp(currentX, targetX, 0.06);
+    currentY = lerp(currentY, targetY, 0.06);
+
+    // Apply 3D perspective rotation + floating offset
+    const floatY = Math.sin(Date.now() * 0.001) * 12;
+    const floatRotateY = Math.sin(Date.now() * 0.0008) * 2;
+
+    wheelWrapper.style.transform = `
+      translateY(${floatY}px)
+      rotateY(${currentX + floatRotateY}deg)
+      rotateX(${-currentY}deg)
+      translateX(${currentX * 0.8}px)
+    `;
+
+    wheelRafId = requestAnimationFrame(animateWheel);
+  };
+
+  // Only activate parallax on larger screens
+  if (window.innerWidth > 992) {
+    // Override CSS animation with JS-driven animation
+    wheelWrapper.style.animation = 'none';
+    animateWheel();
+  }
+
+  // Handle resize: disable parallax on mobile
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (window.innerWidth <= 992) {
+        if (wheelRafId) cancelAnimationFrame(wheelRafId);
+        wheelWrapper.style.animation = '';
+        wheelWrapper.style.transform = '';
+      } else {
+        wheelWrapper.style.animation = 'none';
+        if (!wheelRafId) animateWheel();
+      }
+    }, 200);
+  });
+}

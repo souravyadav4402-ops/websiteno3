@@ -1398,3 +1398,268 @@ body::after {
   opacity: 0.4;
   mix-blend-mode: overlay;
 }
+
+
+
+/* ===== HERO SPLIT LAYOUT - 3D Alloy Wheel ===== */
+.hero--split .hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.6) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%),
+    radial-gradient(ellipse at 70% 50%, rgba(45,127,249,0.04) 0%, transparent 50%);
+}
+
+.hero-split-container {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+  min-height: 100vh;
+  gap: 40px;
+}
+
+.hero-text-side {
+  text-align: left;
+}
+
+.hero-text-side .hero-title {
+  text-align: left;
+}
+
+.hero-text-side .hero-desc {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+.hero-text-side .hero-btns {
+  justify-content: flex-start;
+}
+
+/* ===== Wheel Side Container ===== */
+.hero-wheel-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  perspective: 1200px;
+}
+
+/* ===== Ambient Glow Behind Wheel ===== */
+.wheel-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(
+    circle,
+    rgba(45, 127, 249, 0.08) 0%,
+    rgba(45, 127, 249, 0.04) 30%,
+    rgba(180, 200, 220, 0.02) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: glowPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* ===== Cinematic Shadow Beneath Wheel ===== */
+.wheel-shadow {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(12px);
+  animation: shadowFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shadowFloat {
+  0%, 100% { opacity: 0.7; transform: translateX(-50%) scaleX(1); }
+  50% { opacity: 0.4; transform: translateX(-50%) scaleX(0.85); }
+}
+
+/* ===== Wheel Wrapper (holds the image, handles transforms) ===== */
+.wheel-wrapper {
+  position: relative;
+  width: 85%;
+  max-width: 520px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+  animation: wheelFloat 6s ease-in-out infinite;
+}
+
+@keyframes wheelFloat {
+  0%, 100% { transform: translateY(0px) rotateY(0deg) rotateX(0deg); }
+  25% { transform: translateY(-12px) rotateY(2deg) rotateX(-1deg); }
+  50% { transform: translateY(-20px) rotateY(0deg) rotateX(0deg); }
+  75% { transform: translateY(-12px) rotateY(-2deg) rotateX(1deg); }
+}
+
+/* ===== The Wheel Image ===== */
+.wheel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1.05) contrast(1.08) drop-shadow(0 20px 60px rgba(0,0,0,0.6));
+  animation: wheelSpin 45s linear infinite;
+  transition: filter 0.5s var(--ease-out);
+}
+
+@keyframes wheelSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-wheel-side:hover .wheel-img {
+  filter: brightness(1.12) contrast(1.1) drop-shadow(0 25px 70px rgba(0,0,0,0.7)) drop-shadow(0 0 30px rgba(45,127,249,0.1));
+}
+
+/* ===== Subtle Fog/Smoke Effect ===== */
+.wheel-fog {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 40%;
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 7, 0.9) 0%,
+    rgba(5, 5, 7, 0.4) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ===== Reflective Light Streak ===== */
+.wheel-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 120%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 20%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 80%,
+    transparent 100%
+  );
+  transform: rotate(-15deg);
+  animation: lightStreak 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes lightStreak {
+  0%, 100% { opacity: 0; transform: rotate(-15deg) translateX(-20%); }
+  40%, 60% { opacity: 1; transform: rotate(-15deg) translateX(20%); }
+}
+
+/* ===== Depth Ring (subtle circular border for depth) ===== */
+.wheel-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -4%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
+}
+
+/* ===== Responsive: Split Hero ===== */
+@media (max-width: 1200px) {
+  .hero-split-container {
+    padding: 0 48px;
+    gap: 32px;
+  }
+  .wheel-wrapper {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-split-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 120px 32px 60px;
+    min-height: auto;
+    gap: 20px;
+  }
+  .hero-text-side {
+    text-align: center;
+    order: 1;
+  }
+  .hero-text-side .hero-title { text-align: center; }
+  .hero-text-side .hero-desc { margin: 0 auto 36px; text-align: center; }
+  .hero-text-side .hero-btns { justify-content: center; }
+  .hero-wheel-side {
+    order: 2;
+    min-height: 320px;
+  }
+  .wheel-wrapper {
+    max-width: 320px;
+    width: 70%;
+  }
+  .wheel-fog { height: 30%; }
+}
+
+@media (max-width: 768px) {
+  .hero-split-container {
+    padding: 100px 20px 40px;
+  }
+  .hero-wheel-side {
+    min-height: 260px;
+  }
+  .wheel-wrapper {
+    max-width: 260px;
+    width: 65%;
+  }
+  .wheel-glow { filter: blur(30px); }
+}
+
+@media (max-width: 480px) {
+  .wheel-wrapper {
+    max-width: 200px;
+    width: 60%;
+  }
+  .hero-wheel-side {
+    min-height: 220px;
+  }
+}
