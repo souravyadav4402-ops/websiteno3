@@ -1,7 +1,3 @@
-/* =====================================================
-   VELORIX CUSTOMS — main.js
-   Refined. Lightweight. Premium motion only.
-===================================================== */
 
 /* LOADER */
 window.addEventListener('load', () => {
@@ -13,88 +9,142 @@ window.addEventListener('load', () => {
   if (heroImg) {
     const activate = () => heroImg.classList.add('hero-img-loaded');
     heroImg.complete ? activate() : heroImg.addEventListener('load', activate, { once: true });
-  }
+/* ===== VELORIX CUSTOMS - Premium JS V2 ===== */
+/* Smooth animations, staggered reveals, premium interactions */
+
+'use strict';
+
+// ===== Loading Screen =====
+window.addEventListener('load', () => {
+  const loader = document.querySelector('.loader');
+  setTimeout(() => {
+    loader.classList.add('hidden');
+    document.body.style.overflow = '';
+    // Trigger initial reveals after loader hides
+    setTimeout(revealOnScroll, 200);
+  }, 1200);
 });
 
-/* NAVBAR */
-const navbar = document.getElementById('navbar');
-if (navbar) {
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
-}
+// ===== Navbar Scroll Effect =====
+const navbar = document.querySelector('.navbar');
+let lastScroll = 0;
 
-/* MOBILE MENU */
-const hamburger   = document.getElementById('hamburger');
-const mobileMenu  = document.getElementById('mobileMenu');
-const mobileClose = document.getElementById('mobileClose');
+const handleScroll = () => {
+  const currentScroll = window.scrollY;
+  if (currentScroll > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  lastScroll = currentScroll;
+};
 
-function openMenu()  {
-  hamburger?.classList.add('open');
-  mobileMenu?.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMenu() {
-  hamburger?.classList.remove('open');
-  mobileMenu?.classList.remove('open');
-  document.body.style.overflow = '';
-}
-hamburger?.addEventListener('click', openMenu);
-mobileClose?.addEventListener('click', closeMenu);
-mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+window.addEventListener('scroll', handleScroll, { passive: true });
 
-/* SCROLL REVEAL */
-const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-if (revealEls.length) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+// ===== Hamburger Menu =====
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
     });
-  }, { threshold: 0.10, rootMargin: '0px 0px -48px 0px' });
-  revealEls.forEach(el => io.observe(el));
-}
-
-/* COUNTER ANIMATION */
-const counters = document.querySelectorAll('.counter');
-let countersStarted = false;
-
-function runCounters() {
-  counters.forEach(el => {
-    const target = +el.dataset.target;
-    const step   = target / (2000 / 16);
-    let cur = 0;
-    const tick = () => {
-      cur = Math.min(cur + step, target);
-      el.textContent = Math.floor(cur);
-      if (cur < target) requestAnimationFrame(tick);
-    };
-    tick();
   });
 }
-if (counters.length) {
-  new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting && !countersStarted) {
-      countersStarted = true;
-      runCounters();
+
+
+// ===== Scroll Reveal Animations (Staggered) =====
+const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+  const triggerPoint = windowHeight * 0.88;
+
+  revealElements.forEach((el, index) => {
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < triggerPoint) {
+      // Add small stagger for siblings in same parent
+      const parent = el.parentElement;
+      const siblings = parent ? [...parent.children].filter(c => c.classList.contains('reveal') || c.classList.contains('reveal-left') || c.classList.contains('reveal-right')) : [];
+      const siblingIndex = siblings.indexOf(el);
+      const delay = siblingIndex * 80;
+
+      setTimeout(() => {
+        el.classList.add('active');
+      }, delay);
     }
-  }, { threshold: 0.3 }).observe(counters[0]);
+  });
+};
+
+window.addEventListener('scroll', revealOnScroll, { passive: true });
+
+// ===== Counter Animation (Improved with easing) =====
+const counters = document.querySelectorAll('.counter');
+let counterStarted = false;
+
+const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+const startCounter = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const duration = 2200;
+    const startTime = performance.now();
+
+    const updateCounter = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutQuart(progress);
+      const current = Math.floor(easedProgress * target);
+
+      counter.textContent = current.toLocaleString();
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target.toLocaleString();
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  });
+};
+
+const statsSection = document.querySelector('.stats-grid');
+if (statsSection) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counterStarted) {
+        counterStarted = true;
+        startCounter();
+      }
+    });
+  }, { threshold: 0.2 });
+  statsObserver.observe(statsSection);
 }
 
-/* HERO SUBTLE PARALLAX — respects reduced-motion */
-(function () {
-  const img = document.getElementById('heroImg');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!img || reducedMotion || window.innerWidth <= 768) return;
 
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const y = Math.min(window.scrollY * 0.16, 70);
-        img.style.transform = `scale(1.02) translateY(${y}px)`;
-        ticking = false;
-      });
-      ticking = true;
+// ===== FAQ Accordion =====
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const isActive = item.classList.contains('active');
+
+    // Close all others with smooth animation
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
     }
   }, { passive: true });
 })();
@@ -109,38 +159,170 @@ document.querySelectorAll('.faq-question').forEach(q => {
   });
 });
 
-/* GALLERY FILTER */
-const filterBtns   = document.querySelectorAll('.filter-btn');
+// ===== Gallery Filter =====
+const filterBtns = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    galleryItems.forEach(item => {
-      item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
-    });
-  });
-});
 
-/* SMOOTH SCROLL */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-});
+    const filter = btn.getAttribute('data-filter');
 
-/* LAZY IMAGES */
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const img = e.target;
-        if (img.dataset.src) img.src = img.dataset.src;
-        io.unobserve(img);
+    galleryItems.forEach((item, index) => {
+      const shouldShow = filter === 'all' || item.getAttribute('data-category') === filter;
+
+      if (shouldShow) {
+        item.style.display = 'block';
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          item.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+          item.style.opacity = '1';
+          item.style.transform = 'scale(1)';
+        }, index * 60);
+      } else {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          item.style.display = 'none';
+        }, 300);
       }
     });
   });
-  document.querySelectorAll('img[data-src]').forEach(img => io.observe(img));
+});
+
+// ===== Smooth scroll for anchor links =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ===== Parallax effect on hero background =====
+const heroBg = document.querySelector('.hero-bg');
+if (heroBg) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    if (scrolled < window.innerHeight) {
+      heroBg.style.transform = `scale(1.08) translateY(${scrolled * 0.15}px)`;
+    }
+  }, { passive: true });
+}
+
+// ===== Subtle mouse interaction on service cards =====
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+    card.style.transform = `translateY(-6px) perspective(800px) rotateX(${-y}deg) rotateY(${x}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+  });
+});
+
+// ===== Lazy Loading Images =====
+if ('IntersectionObserver' in window) {
+  const imgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          img.style.opacity = '0';
+          img.onload = () => {
+            img.style.transition = 'opacity 0.6s ease';
+            img.style.opacity = '1';
+          };
+        }
+        imgObserver.unobserve(img);
+      }
+    });
+  }, { rootMargin: '100px' });
+
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imgObserver.observe(img);
+  });
+}
+
+
+
+// ===== 3D Alloy Wheel - Mouse Parallax Effect =====
+const wheelContainer = document.getElementById('wheelContainer');
+const wheelWrapper = document.getElementById('wheelWrapper');
+
+if (wheelContainer && wheelWrapper) {
+  let wheelRafId = null;
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const lerp = (start, end, factor) => start + (end - start) * factor;
+
+  wheelContainer.addEventListener('mousemove', (e) => {
+    const rect = wheelContainer.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    // Normalize mouse position relative to center (-1 to 1)
+    targetX = ((e.clientX - centerX) / (rect.width / 2)) * 12;
+    targetY = ((e.clientY - centerY) / (rect.height / 2)) * 8;
+  });
+
+  wheelContainer.addEventListener('mouseleave', () => {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  const animateWheel = () => {
+    // Smooth interpolation for buttery movement
+    currentX = lerp(currentX, targetX, 0.06);
+    currentY = lerp(currentY, targetY, 0.06);
+
+    // Apply 3D perspective rotation + floating offset
+    const floatY = Math.sin(Date.now() * 0.001) * 12;
+    const floatRotateY = Math.sin(Date.now() * 0.0008) * 2;
+
+    wheelWrapper.style.transform = `
+      translateY(${floatY}px)
+      rotateY(${currentX + floatRotateY}deg)
+      rotateX(${-currentY}deg)
+      translateX(${currentX * 0.8}px)
+    `;
+
+    wheelRafId = requestAnimationFrame(animateWheel);
+  };
+
+  // Only activate parallax on larger screens
+  if (window.innerWidth > 992) {
+    // Override CSS animation with JS-driven animation
+    wheelWrapper.style.animation = 'none';
+    animateWheel();
+  }
+
+  // Handle resize: disable parallax on mobile
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (window.innerWidth <= 992) {
+        if (wheelRafId) cancelAnimationFrame(wheelRafId);
+        wheelWrapper.style.animation = '';
+        wheelWrapper.style.transform = '';
+      } else {
+        wheelWrapper.style.animation = 'none';
+        if (!wheelRafId) animateWheel();
+      }
+    }, 200);
+  });
 }
