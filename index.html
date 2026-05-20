@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
@@ -53,7 +54,7 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=1920&q=80');"></div>
+    <canvas id="hero-canvas"></canvas>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-subtitle">Premium Vehicle Customization Studio</p>
@@ -63,6 +64,10 @@
         <a href="services.html" class="btn-primary">Explore Services →</a>
         <a href="contact.html" class="btn-secondary">Book Consultation</a>
       </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
@@ -146,11 +151,11 @@
     <div class="ba-grid">
       <div class="ba-item reveal">
         <span class="ba-label">Before</span>
-        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80" alt="Before wrap - standard white car" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Before wrap - standard white car" loading="lazy">
       </div>
       <div class="ba-item reveal">
         <span class="ba-label">After</span>
-        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80" alt="After wrap - matte black finish" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&q=80" alt="After wrap - matte black finish" loading="lazy">
       </div>
     </div>
   </section>
@@ -159,7 +164,7 @@
   <section class="section section-darker">
     <div class="about-grid">
       <div class="about-image reveal-left">
-        <img src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&q=80" alt="Velorix Customs Workshop">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Velorix Customs Workshop">
       </div>
       <div class="about-text reveal-right">
         <p class="section-label">Why Choose Us</p>
@@ -189,11 +194,11 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Matte Black BMW wrap" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600&q=80" alt="Matte Black BMW wrap" loading="lazy">
         <span class="overlay-text">Matte Black — BMW M4</span>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80" alt="Satin wrap Mercedes" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600&q=80" alt="Satin wrap Mercedes" loading="lazy">
         <span class="overlay-text">Satin Grey — Mercedes AMG</span>
       </div>
       <div class="gallery-item reveal">
@@ -201,7 +206,7 @@
         <span class="overlay-text">Full PPF — Porsche 911</span>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Custom wrapped Corvette" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Custom wrapped Corvette" loading="lazy">
         <span class="overlay-text">Gloss Red — Corvette C7</span>
       </div>
     </div>
