@@ -124,297 +124,389 @@
               aria-label="Velorix forged alloy wheel"
             >
               <defs>
-                <!-- Outer rim metallic gradient -->
-                <radialGradient id="rimGrad" cx="50%" cy="38%" r="55%">
-                  <stop offset="0%"   stop-color="#d8d8d8"/>
-                  <stop offset="28%"  stop-color="#9a9a9a"/>
-                  <stop offset="55%"  stop-color="#4a4a4a"/>
-                  <stop offset="78%"  stop-color="#2a2a2a"/>
-                  <stop offset="100%" stop-color="#111111"/>
+                <!-- ── TYRE ── -->
+                <radialGradient id="tyreGrad" cx="50%" cy="42%" r="55%">
+                  <stop offset="0%"   stop-color="#333"/>
+                  <stop offset="55%"  stop-color="#181818"/>
+                  <stop offset="100%" stop-color="#090909"/>
                 </radialGradient>
 
-                <!-- Tyre gradient -->
-                <radialGradient id="tyreGrad" cx="50%" cy="40%" r="52%">
-                  <stop offset="0%"   stop-color="#2a2a2a"/>
-                  <stop offset="60%"  stop-color="#161616"/>
-                  <stop offset="100%" stop-color="#0a0a0a"/>
-                </radialGradient>
-
-                <!-- Face / dish gradient — deep metallic -->
-                <radialGradient id="faceGrad" cx="42%" cy="32%" r="62%">
-                  <stop offset="0%"   stop-color="#c8c8c8"/>
-                  <stop offset="20%"  stop-color="#808080"/>
-                  <stop offset="50%"  stop-color="#383838"/>
-                  <stop offset="80%"  stop-color="#1c1c1c"/>
-                  <stop offset="100%" stop-color="#0e0e0e"/>
-                </radialGradient>
-
-                <!-- Spoke face gradient -->
-                <linearGradient id="spokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stop-color="#d0d0d0"/>
-                  <stop offset="35%"  stop-color="#909090"/>
-                  <stop offset="65%"  stop-color="#4a4a4a"/>
-                  <stop offset="100%" stop-color="#2a2a2a"/>
+                <!-- ── RIM BARREL — polished aluminium ── -->
+                <linearGradient id="barrelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#bbb"/>
+                  <stop offset="18%"  stop-color="#f0f0f0"/>
+                  <stop offset="38%"  stop-color="#c8c8c8"/>
+                  <stop offset="55%"  stop-color="#555"/>
+                  <stop offset="72%"  stop-color="#383838"/>
+                  <stop offset="88%"  stop-color="#aaa"/>
+                  <stop offset="100%" stop-color="#888"/>
                 </linearGradient>
 
-                <!-- Spoke highlight edge -->
-                <linearGradient id="spokeEdgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%"   stop-color="#f0f0f0" stop-opacity="0.9"/>
-                  <stop offset="40%"  stop-color="#b0b0b0" stop-opacity="0.5"/>
-                  <stop offset="100%" stop-color="#606060" stop-opacity="0.1"/>
+                <!-- ── FACE DISH — dark gunmetal ── -->
+                <radialGradient id="dishGrad" cx="38%" cy="30%" r="68%">
+                  <stop offset="0%"   stop-color="#4a4a4a"/>
+                  <stop offset="22%"  stop-color="#2e2e2e"/>
+                  <stop offset="55%"  stop-color="#1a1a1a"/>
+                  <stop offset="100%" stop-color="#0c0c0c"/>
+                </radialGradient>
+
+                <!-- ── SPOKE face — brushed aluminium ── -->
+                <linearGradient id="spokeFaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#e8e8e8"/>
+                  <stop offset="20%"  stop-color="#d0d0d0"/>
+                  <stop offset="45%"  stop-color="#a0a0a0"/>
+                  <stop offset="70%"  stop-color="#5a5a5a"/>
+                  <stop offset="100%" stop-color="#3a3a3a"/>
                 </linearGradient>
 
-                <!-- Hub gradient -->
-                <radialGradient id="hubGrad" cx="44%" cy="36%" r="58%">
-                  <stop offset="0%"   stop-color="#e0e0e0"/>
-                  <stop offset="30%"  stop-color="#888888"/>
-                  <stop offset="65%"  stop-color="#303030"/>
-                  <stop offset="100%" stop-color="#111111"/>
-                </radialGradient>
+                <!-- ── SPOKE side — dark undercut ── -->
+                <linearGradient id="spokeSideGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#1a1a1a"/>
+                  <stop offset="60%"  stop-color="#252525"/>
+                  <stop offset="100%" stop-color="#111"/>
+                </linearGradient>
 
-                <!-- Centre cap gradient -->
-                <radialGradient id="capGrad" cx="40%" cy="35%" r="55%">
-                  <stop offset="0%"   stop-color="#c0c0c0"/>
-                  <stop offset="45%"  stop-color="#484848"/>
-                  <stop offset="100%" stop-color="#0a0a0a"/>
-                </radialGradient>
+                <!-- ── SPOKE top edge highlight ── -->
+                <linearGradient id="spokeTopGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#fff" stop-opacity="0.85"/>
+                  <stop offset="50%"  stop-color="#ccc" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#888" stop-opacity="0.1"/>
+                </linearGradient>
 
-                <!-- Brake rotor gradient -->
+                <!-- ── ROTOR ── -->
                 <radialGradient id="rotorGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%"   stop-color="#3a3a3a"/>
-                  <stop offset="55%"  stop-color="#262626"/>
-                  <stop offset="100%" stop-color="#181818"/>
+                  <stop offset="0%"   stop-color="#444"/>
+                  <stop offset="50%"  stop-color="#2c2c2c"/>
+                  <stop offset="100%" stop-color="#1a1a1a"/>
                 </radialGradient>
 
-                <!-- Caliper gradient (vivid accent) -->
+                <!-- ── CALIPER red ── -->
                 <linearGradient id="caliperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stop-color="#1a78e0"/>
-                  <stop offset="100%" stop-color="#0d4fa8"/>
+                  <stop offset="0%"   stop-color="#e03030"/>
+                  <stop offset="100%" stop-color="#8b0000"/>
                 </linearGradient>
 
-                <!-- Reflection streak -->
-                <linearGradient id="reflectGrad" x1="0%" y1="0%" x2="60%" y2="100%">
-                  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.18"/>
-                  <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.06"/>
-                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                <!-- ── HUB ── -->
+                <radialGradient id="hubGrad" cx="40%" cy="34%" r="60%">
+                  <stop offset="0%"   stop-color="#d0d0d0"/>
+                  <stop offset="35%"  stop-color="#808080"/>
+                  <stop offset="70%"  stop-color="#2e2e2e"/>
+                  <stop offset="100%" stop-color="#111"/>
+                </radialGradient>
+
+                <!-- ── CAP ── -->
+                <radialGradient id="capGrad" cx="38%" cy="32%" r="58%">
+                  <stop offset="0%"   stop-color="#b0b0b0"/>
+                  <stop offset="45%"  stop-color="#404040"/>
+                  <stop offset="100%" stop-color="#080808"/>
+                </radialGradient>
+
+                <!-- ── STUDIO LIGHT sweep ── -->
+                <linearGradient id="lightSweep" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#fff" stop-opacity="0.13"/>
+                  <stop offset="40%"  stop-color="#fff" stop-opacity="0.05"/>
+                  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
                 </linearGradient>
 
-                <!-- Rim lip highlight -->
-                <linearGradient id="lipGrad" x1="20%" y1="0%" x2="80%" y2="100%">
-                  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.5"/>
-                  <stop offset="40%"  stop-color="#aaaaaa" stop-opacity="0.2"/>
-                  <stop offset="100%" stop-color="#333333" stop-opacity="0.0"/>
-                </linearGradient>
-
-                <!-- Clip paths -->
-                <clipPath id="wheelClip">
-                  <circle cx="250" cy="250" r="232"/>
-                </clipPath>
-                <clipPath id="faceClip">
-                  <circle cx="250" cy="250" r="200"/>
-                </clipPath>
-
-                <!-- Spoke shadow filter -->
-                <filter id="spokeShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="3" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.7"/>
+                <!-- ── FILTERS ── -->
+                <filter id="spokeDrop" x="-25%" y="-25%" width="150%" height="150%">
+                  <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.75"/>
+                </filter>
+                <filter id="rimInner" x="-5%" y="-5%" width="110%" height="110%">
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
                 </filter>
 
-                <!-- Soft inner shadow -->
-                <filter id="innerShadow" x="-10%" y="-10%" width="120%" height="120%">
-                  <feOffset dx="0" dy="2"/>
-                  <feGaussianBlur stdDeviation="4" result="offset-blur"/>
-                  <feFlood flood-color="#000" flood-opacity="0.6" result="color"/>
-                  <feComposite in="color" in2="offset-blur" operator="in" result="shadow"/>
-                  <feComposite in="SourceGraphic" in2="shadow" operator="over"/>
-                </filter>
+                <!-- ── CLIP PATHS ── -->
+                <clipPath id="faceClip">  <circle cx="250" cy="250" r="196"/></clipPath>
+                <clipPath id="tyreClip">  <circle cx="250" cy="250" r="245"/></clipPath>
 
-                <!-- Tyre sidewall text path -->
-                <path id="tyrePath" d="M250,250 m-222,0 a222,222 0 1,1 444,0 a222,222 0 1,1 -444,0"/>
+                <!-- ── SIDEWALL TEXT PATH ── -->
+                <path id="sidewallPath"
+                  d="M250,250 m-220,0 a220,220 0 1,1 440,0 a220,220 0 1,1 -440,0"/>
               </defs>
 
-              <!-- ─── TYRE ─────────────────────────────────────────── -->
-              <circle cx="250" cy="250" r="240" fill="url(#tyreGrad)"/>
-
-              <!-- Tyre shoulder highlight top-left -->
-              <path
-                d="M108,108 A200,200 0 0,1 392,108"
-                fill="none"
-                stroke="rgba(255,255,255,0.07)"
-                stroke-width="18"
-                stroke-linecap="round"
-              />
-
-              <!-- Tyre sidewall subtle text -->
-              <text font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.12)"
-                    font-weight="500" letter-spacing="4">
-                <textPath href="#tyrePath" startOffset="5%">
-                  VELORIX · FORGED SERIES · 20 · 275/35ZR20 · VELORIX · FORGED SERIES ·
+              <!-- ══════════════════════════════════════════
+                   LAYER 1 — TYRE  (outermost dark rubber ring)
+              ══════════════════════════════════════════ -->
+              <!-- Tyre body -->
+              <circle cx="250" cy="250" r="244" fill="url(#tyreGrad)"/>
+              <!-- Tyre inner shoulder edge -->
+              <circle cx="250" cy="250" r="228" fill="none" stroke="rgba(80,80,80,0.6)" stroke-width="2"/>
+              <!-- Top-left tyre shoulder gloss arc -->
+              <path d="M 95,135 A 176,176 0 0,1 250,74" fill="none"
+                    stroke="rgba(255,255,255,0.09)" stroke-width="16" stroke-linecap="round"/>
+              <!-- Sidewall raised lettering -->
+              <text font-family="Inter,sans-serif" font-size="10.5" letter-spacing="5.5"
+                    font-weight="600" fill="rgba(255,255,255,0.11)">
+                <textPath href="#sidewallPath" startOffset="3%">
+                  VELORIX · RS SPORT · 20×9.5 · 265/35ZR20 · VELORIX · RS SPORT ·
                 </textPath>
               </text>
 
-              <!-- ─── RIM LIP ─────────────────────────────────────── -->
-              <circle cx="250" cy="250" r="226" fill="url(#rimGrad)" filter="url(#innerShadow)"/>
-              <!-- Rim lip highlight arc -->
-              <path
-                d="M70,170 A200,200 0 0,1 430,170"
-                fill="none"
-                stroke="url(#lipGrad)"
-                stroke-width="10"
-                stroke-linecap="round"
-              />
+              <!-- ══════════════════════════════════════════
+                   LAYER 2 — RIM BARREL  (polished aluminium lip)
+              ══════════════════════════════════════════ -->
+              <circle cx="250" cy="250" r="226" fill="url(#barrelGrad)"/>
+              <!-- Barrel bead seat groove -->
+              <circle cx="250" cy="250" r="217" fill="none"
+                      stroke="rgba(0,0,0,0.55)" stroke-width="3"/>
+              <!-- Top highlight arc on barrel -->
+              <path d="M 82,160 A 186,186 0 0,1 418,160" fill="none"
+                    stroke="rgba(255,255,255,0.55)" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Barrel shadow at bottom -->
+              <path d="M 82,340 A 186,186 0 0,0 418,340" fill="none"
+                    stroke="rgba(0,0,0,0.4)" stroke-width="8" stroke-linecap="round"/>
 
-              <!-- ─── WHEEL FACE / DISH ──────────────────────────── -->
-              <circle cx="250" cy="250" r="200" fill="url(#faceGrad)"/>
-
-              <!-- ─── BRAKE ROTOR (behind spokes) ───────────────── -->
-              <circle cx="250" cy="250" r="118" fill="url(#rotorGrad)"/>
-              <!-- Rotor ventilation slots — 12 radial lines -->
-              <g stroke="rgba(0,0,0,0.55)" stroke-width="2.5" stroke-linecap="round">
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(0 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(30 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(60 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(90 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(120 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(150 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(180 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(210 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(240 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(270 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(300 250 250)"/>
-                <line x1="250" y1="145" x2="250" y2="168" transform="rotate(330 250 250)"/>
-              </g>
-              <!-- Rotor ring groove -->
-              <circle cx="250" cy="250" r="102" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="3"/>
-              <circle cx="250" cy="250" r="88"  fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"/>
-
-              <!-- ─── CALIPER (behind spokes, at ~8 o'clock) ────── -->
-              <rect
-                x="108" y="268"
-                width="42" height="26"
-                rx="5"
-                fill="url(#caliperGrad)"
-                transform="rotate(-18 250 250)"
-                filter="url(#spokeShadow)"
-              />
-              <!-- Caliper bolt detail -->
-              <circle cx="117" cy="278" r="3.5" fill="rgba(255,255,255,0.3)" transform="rotate(-18 250 250)"/>
-              <circle cx="143" cy="278" r="3.5" fill="rgba(255,255,255,0.3)" transform="rotate(-18 250 250)"/>
-              <text x="130" y="285" text-anchor="middle" font-family="Inter,sans-serif"
-                    font-size="6.5" fill="rgba(255,255,255,0.8)" font-weight="700"
-                    transform="rotate(-18 250 250)">BREMBO</text>
-
-              <!-- ─── 5 DOUBLE SPOKES ─────────────────────────────
-                   Each spoke pair is drawn as two tapered polygons
-                   with a shadow face between them.
-                   Rotation: 0, 72, 144, 216, 288 degrees
-              ──────────────────────────────────────────────────── -->
-
-              <!-- Spoke group macro — repeated 5× via transform -->
-              <!-- SPOKE 1 -->
-              <g transform="rotate(0 250 250)" filter="url(#spokeShadow)">
-                <!-- Left blade -->
-                <polygon
-                  points="232,68 243,68 258,172 242,172"
-                  fill="url(#spokeGrad)"
-                />
-                <!-- Right blade -->
-                <polygon
-                  points="257,68 268,68 264,172 249,172"
-                  fill="url(#spokeGrad)"
-                />
-                <!-- Gap shadow between blades -->
-                <polygon
-                  points="243,68 257,68 264,172 258,172"
-                  fill="rgba(0,0,0,0.7)"
-                />
-                <!-- Left blade highlight edge -->
-                <line x1="232" y1="68" x2="242" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="2"/>
-                <!-- Right blade highlight edge -->
-                <line x1="268" y1="68" x2="264" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="1.5"/>
-              </g>
-              <!-- SPOKE 2 -->
-              <g transform="rotate(72 250 250)" filter="url(#spokeShadow)">
-                <polygon points="232,68 243,68 258,172 242,172" fill="url(#spokeGrad)"/>
-                <polygon points="257,68 268,68 264,172 249,172" fill="url(#spokeGrad)"/>
-                <polygon points="243,68 257,68 264,172 258,172" fill="rgba(0,0,0,0.7)"/>
-                <line x1="232" y1="68" x2="242" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="2"/>
-                <line x1="268" y1="68" x2="264" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="1.5"/>
-              </g>
-              <!-- SPOKE 3 -->
-              <g transform="rotate(144 250 250)" filter="url(#spokeShadow)">
-                <polygon points="232,68 243,68 258,172 242,172" fill="url(#spokeGrad)"/>
-                <polygon points="257,68 268,68 264,172 249,172" fill="url(#spokeGrad)"/>
-                <polygon points="243,68 257,68 264,172 258,172" fill="rgba(0,0,0,0.7)"/>
-                <line x1="232" y1="68" x2="242" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="2"/>
-                <line x1="268" y1="68" x2="264" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="1.5"/>
-              </g>
-              <!-- SPOKE 4 -->
-              <g transform="rotate(216 250 250)" filter="url(#spokeShadow)">
-                <polygon points="232,68 243,68 258,172 242,172" fill="url(#spokeGrad)"/>
-                <polygon points="257,68 268,68 264,172 249,172" fill="url(#spokeGrad)"/>
-                <polygon points="243,68 257,68 264,172 258,172" fill="rgba(0,0,0,0.7)"/>
-                <line x1="232" y1="68" x2="242" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="2"/>
-                <line x1="268" y1="68" x2="264" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="1.5"/>
-              </g>
-              <!-- SPOKE 5 -->
-              <g transform="rotate(288 250 250)" filter="url(#spokeShadow)">
-                <polygon points="232,68 243,68 258,172 242,172" fill="url(#spokeGrad)"/>
-                <polygon points="257,68 268,68 264,172 249,172" fill="url(#spokeGrad)"/>
-                <polygon points="243,68 257,68 264,172 258,172" fill="rgba(0,0,0,0.7)"/>
-                <line x1="232" y1="68" x2="242" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="2"/>
-                <line x1="268" y1="68" x2="264" y2="172" stroke="url(#spokeEdgeGrad)" stroke-width="1.5"/>
-              </g>
-
-              <!-- ─── HUB RING ─────────────────────────────────── -->
-              <circle cx="250" cy="250" r="72"  fill="url(#hubGrad)"/>
-              <circle cx="250" cy="250" r="64"  fill="rgba(0,0,0,0.5)"/>
-              <circle cx="250" cy="250" r="58"  fill="url(#hubGrad)"/>
-
-              <!-- Hub bolt holes — 5 × 114.3 PCD -->
-              <g fill="rgba(0,0,0,0.85)" stroke="rgba(255,255,255,0.15)" stroke-width="1">
-                <circle cx="250" cy="215" r="8" transform="rotate(0 250 250)"/>
-                <circle cx="250" cy="215" r="8" transform="rotate(72 250 250)"/>
-                <circle cx="250" cy="215" r="8" transform="rotate(144 250 250)"/>
-                <circle cx="250" cy="215" r="8" transform="rotate(216 250 250)"/>
-                <circle cx="250" cy="215" r="8" transform="rotate(288 250 250)"/>
-              </g>
-              <!-- Bolt highlight -->
-              <g fill="rgba(255,255,255,0.15)">
-                <circle cx="250" cy="209" r="3" transform="rotate(0 250 250)"/>
-                <circle cx="250" cy="209" r="3" transform="rotate(72 250 250)"/>
-                <circle cx="250" cy="209" r="3" transform="rotate(144 250 250)"/>
-                <circle cx="250" cy="209" r="3" transform="rotate(216 250 250)"/>
-                <circle cx="250" cy="209" r="3" transform="rotate(288 250 250)"/>
-              </g>
-
-              <!-- ─── CENTRE CAP ───────────────────────────────── -->
-              <circle cx="250" cy="250" r="46" fill="url(#capGrad)"/>
-              <circle cx="250" cy="250" r="40" fill="rgba(5,5,5,0.9)"/>
-              <!-- Cap chrome ring -->
-              <circle cx="250" cy="250" r="40" fill="none" stroke="rgba(200,200,200,0.35)" stroke-width="2.5"/>
-              <!-- Velorix "V" badge in centre cap -->
-              <text x="250" y="258" text-anchor="middle"
-                    font-family="Sora,Inter,sans-serif"
-                    font-size="22" font-weight="700"
-                    fill="url(#spokeEdgeGrad)"
-                    letter-spacing="1">V</text>
-              <text x="250" y="268" text-anchor="middle"
-                    font-family="Inter,sans-serif"
-                    font-size="7" font-weight="500"
-                    fill="rgba(160,160,160,0.7)"
-                    letter-spacing="3">VELORIX</text>
-
-              <!-- ─── GLOBAL REFLECTION STREAK ────────────────── -->
-              <ellipse cx="200" cy="190" rx="95" ry="60"
-                       fill="url(#reflectGrad)"
-                       transform="rotate(-30 200 190)"
-                       clip-path="url(#faceClip)"/>
-
-              <!-- ─── RIM OUTER HIGHLIGHT ──────────────────────── -->
-              <circle cx="250" cy="250" r="226" fill="none"
+              <!-- ══════════════════════════════════════════
+                   LAYER 3 — FACE / DISH  (dark gunmetal)
+              ══════════════════════════════════════════ -->
+              <circle cx="250" cy="250" r="210" fill="url(#dishGrad)"/>
+              <!-- Step ring between barrel and face -->
+              <circle cx="250" cy="250" r="210" fill="none"
                       stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-              <circle cx="250" cy="250" r="220" fill="none"
-                      stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <circle cx="250" cy="250" r="205" fill="none"
+                      stroke="rgba(0,0,0,0.5)" stroke-width="2"/>
+
+              <!-- ══════════════════════════════════════════
+                   LAYER 4 — BRAKE ROTOR  (peeking behind spokes)
+              ══════════════════════════════════════════ -->
+              <circle cx="250" cy="250" r="120" fill="url(#rotorGrad)"/>
+              <!-- Rotor hat inner step -->
+              <circle cx="250" cy="250" r="108" fill="none"
+                      stroke="rgba(0,0,0,0.5)" stroke-width="3"/>
+              <!-- Rotor ventilation slots — drilled holes pattern -->
+              <g fill="rgba(0,0,0,0.6)">
+                <!-- 12 oval drilled holes in two rings -->
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(0 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(30 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(60 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(90 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(120 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(150 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(180 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(210 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(240 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(270 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(300 250 250)"/>
+                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(330 250 250)"/>
+              </g>
+              <!-- Rotor face ring grooves -->
+              <circle cx="250" cy="250" r="130" fill="none"
+                      stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <circle cx="250" cy="250" r="115" fill="none"
+                      stroke="rgba(0,0,0,0.35)" stroke-width="2"/>
+
+              <!-- ══════════════════════════════════════════
+                   LAYER 5 — CALIPER  (red, behind spokes at ~8 o'clock)
+                   Positioned at ~220° — left-lower quadrant visible through window
+              ══════════════════════════════════════════ -->
+              <g transform="rotate(220 250 250)">
+                <!-- Main caliper body -->
+                <rect x="105" y="240" width="52" height="32" rx="6"
+                      fill="url(#caliperGrad)" filter="url(#spokeDrop)"/>
+                <!-- Caliper bridge ridge -->
+                <rect x="105" y="252" width="52" height="4" rx="2"
+                      fill="rgba(0,0,0,0.35)"/>
+                <!-- Piston ends -->
+                <rect x="107" y="242" width="10" height="10" rx="3"
+                      fill="rgba(255,255,255,0.2)"/>
+                <rect x="143" y="242" width="10" height="10" rx="3"
+                      fill="rgba(255,255,255,0.2)"/>
+                <!-- BREMBO text -->
+                <text x="131" y="262" text-anchor="middle" font-family="Inter,sans-serif"
+                      font-size="6" font-weight="700" fill="rgba(255,255,255,0.85)"
+                      letter-spacing="1.5">BREMBO</text>
+                <!-- Caliper bolt -->
+                <circle cx="113" cy="270" r="3" fill="rgba(200,200,200,0.4)"/>
+                <circle cx="147" cy="270" r="3" fill="rgba(200,200,200,0.4)"/>
+              </g>
+
+              <!-- ══════════════════════════════════════════
+                   LAYER 6 — 10 CURVED SPOKES
+                   Design: HRE P101 / BBS CH-R inspired
+                   Each spoke is a filled path that:
+                   · starts narrow at the hub (r≈78)
+                   · sweeps wide and curves to the rim (r≈200)
+                   · has a raised face + dark undercut side
+                   · has a bright machined top edge
+                   All 10 spokes generated via rotate() transforms
+                   at 0°, 36°, 72°, 108°, 144°, 180°, 216°, 252°, 288°, 324°
+              ══════════════════════════════════════════ -->
+
+              <!--
+                SPOKE GEOMETRY (in the "0°" position, pointing UP):
+                Hub attach: narrow region around y≈172 (hub radius ~78)
+                Rim attach:  wide flare at y≈56 (rim radius ~194)
+
+                The spoke body is a curved quadrilateral:
+                  Left edge:  cubic bezier curving left as it goes outward
+                  Right edge: cubic bezier curving right as it goes outward
+                  Top (rim):  arc segment of the rim circle
+                  Bottom (hub): arc segment of the hub circle
+
+                Path for the FACE (top surface, lighter):
+                  Start at hub-left → left-bezier up → rim-arc → right-bezier down → hub-arc → close
+
+                Path for the SIDE/UNDERCUT (darker):
+                  Thin strip on the trailing side of each spoke
+              -->
+
+              <!-- SPOKE FACE TEMPLATE (repeated 10× via rotate) -->
+              <!-- Spoke at 0° -->
+              <g transform="rotate(0 250 250)" filter="url(#spokeDrop)">
+                <!-- Spoke body — main face -->
+                <path d="
+                  M 244,172
+                  C 238,148 222,108 210,72
+                  A 194,194 0 0,1 290,72
+                  C 278,108 262,148 256,172
+                  A 8,8 0 0,1 244,172 Z
+                " fill="url(#spokeFaceGrad)"/>
+                <!-- Machined top edge highlight -->
+                <path d="
+                  M 244,172
+                  C 238,148 222,108 210,72
+                  A 194,194 0 0,1 290,72
+                  C 278,108 262,148 256,172
+                " fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <!-- Left undercut shadow -->
+                <path d="
+                  M 244,172
+                  C 238,148 222,108 210,72
+                  L 204,74
+                  C 216,110 232,150 238,172 Z
+                " fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 36° -->
+              <g transform="rotate(36 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 72° -->
+              <g transform="rotate(72 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 108° -->
+              <g transform="rotate(108 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 144° -->
+              <g transform="rotate(144 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 180° -->
+              <g transform="rotate(180 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 216° -->
+              <g transform="rotate(216 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 252° -->
+              <g transform="rotate(252 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 288° -->
+              <g transform="rotate(288 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- Spoke at 324° -->
+              <g transform="rotate(324 250 250)" filter="url(#spokeDrop)">
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
+                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
+              </g>
+
+              <!-- ══════════════════════════════════════════
+                   LAYER 7 — HUB BARREL  (concentric rings)
+              ══════════════════════════════════════════ -->
+              <!-- Hub outer ring -->
+              <circle cx="250" cy="250" r="78" fill="url(#hubGrad)"/>
+              <circle cx="250" cy="250" r="76" fill="none"
+                      stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+              <!-- Hub step -->
+              <circle cx="250" cy="250" r="68" fill="rgba(0,0,0,0.55)"/>
+              <circle cx="250" cy="250" r="60" fill="url(#hubGrad)"/>
+              <circle cx="250" cy="250" r="58" fill="none"
+                      stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+              <!-- 5×120 PCD bolt holes — BMW Sport spec -->
+              <g fill="rgba(8,8,8,0.9)" stroke="rgba(180,180,180,0.3)" stroke-width="1.2">
+                <circle cx="250" cy="218" r="7"   transform="rotate(0   250 250)"/>
+                <circle cx="250" cy="218" r="7"   transform="rotate(72  250 250)"/>
+                <circle cx="250" cy="218" r="7"   transform="rotate(144 250 250)"/>
+                <circle cx="250" cy="218" r="7"   transform="rotate(216 250 250)"/>
+                <circle cx="250" cy="218" r="7"   transform="rotate(288 250 250)"/>
+              </g>
+              <!-- Wheel nut hex shape hint -->
+              <g fill="rgba(140,140,140,0.2)">
+                <circle cx="250" cy="218" r="3.5" transform="rotate(0   250 250)"/>
+                <circle cx="250" cy="218" r="3.5" transform="rotate(72  250 250)"/>
+                <circle cx="250" cy="218" r="3.5" transform="rotate(144 250 250)"/>
+                <circle cx="250" cy="218" r="3.5" transform="rotate(216 250 250)"/>
+                <circle cx="250" cy="218" r="3.5" transform="rotate(288 250 250)"/>
+              </g>
+
+              <!-- ══════════════════════════════════════════
+                   LAYER 8 — CENTRE CAP
+              ══════════════════════════════════════════ -->
+              <!-- Cap body -->
+              <circle cx="250" cy="250" r="44" fill="url(#capGrad)"/>
+              <!-- Chrome outer ring -->
+              <circle cx="250" cy="250" r="44" fill="none"
+                      stroke="rgba(220,220,220,0.45)" stroke-width="2.5"/>
+              <circle cx="250" cy="250" r="40" fill="none"
+                      stroke="rgba(0,0,0,0.6)" stroke-width="1.5"/>
+              <!-- Cap dark centre -->
+              <circle cx="250" cy="250" r="37" fill="rgba(6,6,6,0.92)"/>
+              <!-- Inner chrome ring -->
+              <circle cx="250" cy="250" r="37" fill="none"
+                      stroke="rgba(180,180,180,0.25)" stroke-width="1"/>
+              <!-- V badge -->
+              <text x="250" y="256" text-anchor="middle"
+                    font-family="Sora,sans-serif" font-size="20" font-weight="800"
+                    fill="url(#spokeTopGrad)" letter-spacing="-0.5">V</text>
+              <!-- Velorix sub-text -->
+              <text x="250" y="266" text-anchor="middle"
+                    font-family="Inter,sans-serif" font-size="6.5" font-weight="600"
+                    fill="rgba(150,150,150,0.65)" letter-spacing="3.5">VELORIX</text>
+
+              <!-- ══════════════════════════════════════════
+                   LAYER 9 — STUDIO LIGHT SWEEP  (final gloss)
+              ══════════════════════════════════════════ -->
+              <ellipse cx="192" cy="182" rx="110" ry="70"
+                       fill="url(#lightSweep)"
+                       transform="rotate(-28 192 182)"
+                       clip-path="url(#faceClip)"/>
+              <!-- Small secondary hotspot -->
+              <ellipse cx="310" cy="155" rx="40" ry="22"
+                       fill="rgba(255,255,255,0.04)"
+                       transform="rotate(-10 310 155)"/>
 
             </svg><!-- /wheel-svg -->
           </div><!-- /wheel-wrapper -->
