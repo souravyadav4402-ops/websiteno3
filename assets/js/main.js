@@ -1,3 +1,14 @@
+
+/* LOADER */
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  if (loader) setTimeout(() => loader.classList.add('out'), 700);
+
+  /* Hero image: trigger slow zoom-out once loaded */
+  const heroImg = document.getElementById('heroImg');
+  if (heroImg) {
+    const activate = () => heroImg.classList.add('hero-img-loaded');
+    heroImg.complete ? activate() : heroImg.addEventListener('load', activate, { once: true });
 /* ===== VELORIX CUSTOMS - Premium JS V2 ===== */
 /* Smooth animations, staggered reveals, premium interactions */
 
@@ -135,13 +146,22 @@ document.querySelectorAll('.faq-question').forEach(question => {
     if (!isActive) {
       item.classList.add('active');
     }
+  }, { passive: true });
+})();
+
+/* FAQ ACCORDION */
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item   = q.parentElement;
+    const isOpen = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!isOpen) item.classList.add('active');
   });
 });
 
 // ===== Gallery Filter =====
 const filterBtns = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
-
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
