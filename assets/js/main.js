@@ -1,29 +1,35 @@
-/* ═══════════════════════════════════════════════════════
+/* =====================================================
    VELORIX CUSTOMS — main.js
-   Clean, lightweight, no gimmicks.
-═══════════════════════════════════════════════════════ */
+   Refined. Lightweight. Premium motion only.
+===================================================== */
 
-/* ── LOADER ─────────────────────────────────────────── */
+/* LOADER */
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
-  if (!loader) return;
-  setTimeout(() => loader.classList.add('out'), 900);
+  if (loader) setTimeout(() => loader.classList.add('out'), 700);
+
+  /* Hero image: trigger slow zoom-out once loaded */
+  const heroImg = document.getElementById('heroImg');
+  if (heroImg) {
+    const activate = () => heroImg.classList.add('hero-img-loaded');
+    heroImg.complete ? activate() : heroImg.addEventListener('load', activate, { once: true });
+  }
 });
 
-/* ── NAVBAR SCROLL ──────────────────────────────────── */
+/* NAVBAR */
 const navbar = document.getElementById('navbar');
 if (navbar) {
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
 }
 
-/* ── HAMBURGER / MOBILE MENU ────────────────────────── */
-const hamburger  = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+/* MOBILE MENU */
+const hamburger   = document.getElementById('hamburger');
+const mobileMenu  = document.getElementById('mobileMenu');
 const mobileClose = document.getElementById('mobileClose');
 
-function openMenu() {
+function openMenu()  {
   hamburger?.classList.add('open');
   mobileMenu?.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -33,36 +39,31 @@ function closeMenu() {
   mobileMenu?.classList.remove('open');
   document.body.style.overflow = '';
 }
-
 hamburger?.addEventListener('click', openMenu);
 mobileClose?.addEventListener('click', closeMenu);
 mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
-/* ── SCROLL REVEAL ───────────────────────────────────── */
+/* SCROLL REVEAL */
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+if (revealEls.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -48px 0px' });
+  revealEls.forEach(el => io.observe(el));
+}
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-revealEls.forEach(el => revealObserver.observe(el));
-
-/* ── COUNTER ANIMATION ───────────────────────────────── */
+/* COUNTER ANIMATION */
 const counters = document.querySelectorAll('.counter');
 let countersStarted = false;
 
 function runCounters() {
   counters.forEach(el => {
     const target = +el.dataset.target;
-    const dur    = 1800;
-    const step   = target / (dur / 16);
-    let cur      = 0;
-    const tick   = () => {
+    const step   = target / (2000 / 16);
+    let cur = 0;
+    const tick = () => {
       cur = Math.min(cur + step, target);
       el.textContent = Math.floor(cur);
       if (cur < target) requestAnimationFrame(tick);
@@ -70,7 +71,6 @@ function runCounters() {
     tick();
   });
 }
-
 if (counters.length) {
   new IntersectionObserver(entries => {
     if (entries[0].isIntersecting && !countersStarted) {
@@ -80,17 +80,26 @@ if (counters.length) {
   }, { threshold: 0.3 }).observe(counters[0]);
 }
 
+/* HERO SUBTLE PARALLAX — respects reduced-motion */
+(function () {
+  const img = document.getElementById('heroImg');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!img || reducedMotion || window.innerWidth <= 768) return;
 
-/* ── HERO PARALLAX — very subtle, CSS only preferred ── */
-const heroImg = document.getElementById('heroImg');
-if (heroImg && window.innerWidth > 768) {
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    const y = window.scrollY * 0.25;
-    heroImg.style.transform = `scale(1.04) translateY(${y}px)`;
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY * 0.16, 70);
+        img.style.transform = `scale(1.02) translateY(${y}px)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
   }, { passive: true });
-}
+})();
 
-/* ── FAQ ACCORDION ───────────────────────────────────── */
+/* FAQ ACCORDION */
 document.querySelectorAll('.faq-question').forEach(q => {
   q.addEventListener('click', () => {
     const item   = q.parentElement;
@@ -100,44 +109,38 @@ document.querySelectorAll('.faq-question').forEach(q => {
   });
 });
 
-/* ── GALLERY FILTER ──────────────────────────────────── */
+/* GALLERY FILTER */
 const filterBtns   = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
-
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
     galleryItems.forEach(item => {
-      const match = filter === 'all' || item.dataset.category === filter;
-      item.style.display    = match ? 'block' : 'none';
-      item.style.opacity    = match ? '1' : '0';
+      item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
     });
   });
 });
 
-/* ── SMOOTH SCROLL (anchor links) ────────────────────── */
+/* SMOOTH SCROLL */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
 
-/* ── LAZY IMAGES ─────────────────────────────────────── */
+/* LAZY IMAGES */
 if ('IntersectionObserver' in window) {
-  const imgObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        if (img.dataset.src) { img.src = img.dataset.src; }
-        imgObs.unobserve(img);
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const img = e.target;
+        if (img.dataset.src) img.src = img.dataset.src;
+        io.unobserve(img);
       }
     });
   });
-  document.querySelectorAll('img[data-src]').forEach(img => imgObs.observe(img));
+  document.querySelectorAll('img[data-src]').forEach(img => io.observe(img));
 }
