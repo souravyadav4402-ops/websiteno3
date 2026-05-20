@@ -3,747 +3,354 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Velorix Customs - Premium Car Wrapping, PPF, Ceramic Coating & Vehicle Customization Studio in Rohini, Delhi">
-  <title>Velorix Customs | Premium Car Wrapping & Customization Studio</title>
+  <meta name="description" content="Velorix Customs — Premium Car Wrapping, PPF, Ceramic Coating & Vehicle Customisation Studio in Rohini, Delhi">
+  <title>Velorix Customs | Premium Car Wrapping & Customisation Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Loader -->
-  <div class="loader">
-    <div class="loader-content">
-      <h2>Velorix</h2>
-      <div class="loader-bar"></div>
-    </div>
+<!-- ── LOADER ─────────────────────────────────────── -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <span class="loader-logo">VELORIX</span>
+    <div class="loader-track"><div class="loader-fill"></div></div>
   </div>
+</div>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo">Velo<span>rix</span></a>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="testimonials.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu">
-    <a href="index.html">Home</a>
+<!-- ── NAV ────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">Velo<span>rix</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="car-wrapping.html">Car Wrapping</a>
-    <a href="ppf.html">PPF</a>
-    <a href="ceramic-coating.html">Ceramic Coating</a>
     <a href="gallery.html">Gallery</a>
     <a href="testimonials.html">Reviews</a>
-    <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
   </div>
+  <div class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ────────────────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="car-wrapping.html">Car Wrapping</a>
+  <a href="ppf.html">PPF</a>
+  <a href="ceramic-coating.html">Ceramic Coating</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="testimonials.html">Reviews</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
 
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
+<!-- ── HERO ───────────────────────────────────────── -->
+<section class="hero" id="hero">
 
-    <!-- Layered background -->
-    <div class="hero-bg-layer hero-bg-base"></div>
-    <div class="hero-bg-layer hero-bg-radial"></div>
-    <div class="hero-bg-layer hero-bg-vignette"></div>
+  <!-- Background image -->
+  <div class="hero-img-wrap">
+    <img
+      src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1600&q=85&auto=format&fit=crop"
+      alt="BMW M3 in premium dark studio"
+      class="hero-img"
+      id="heroImg"
+      loading="eager"
+    >
+    <div class="hero-img-overlay"></div>
+  </div>
 
-    <!-- Noise texture overlay -->
-    <div class="hero-noise"></div>
-
-    <!-- Split layout -->
-    <div class="hero-split">
-
-      <!-- LEFT — Typography & CTA -->
-      <div class="hero-left">
-        <div class="hero-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">Premium Vehicle Customisation</span>
-        </div>
-
-        <h1 class="hero-title">
-          Engineered<br>
-          <em>to Turn</em><br>
-          <strong>Heads.</strong>
-        </h1>
-
-        <p class="hero-desc">
-          Delhi's most exclusive studio for car wrapping, PPF,
-          ceramic coating &amp; bespoke customisation. Where
-          precision meets perfection.
-        </p>
-
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <span class="hero-meta-num">2500<sup>+</sup></span>
-            <span class="hero-meta-label">Vehicles Transformed</span>
-          </div>
-          <div class="hero-meta-divider"></div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-num">8<sup>+</sup></span>
-            <span class="hero-meta-label">Years of Excellence</span>
-          </div>
-        </div>
-
-        <div class="hero-btns">
-          <a href="services.html" class="btn-primary">Explore Services</a>
-          <a href="contact.html" class="btn-ghost">Book Consultation</a>
-        </div>
+  <!-- Content -->
+  <div class="hero-body">
+    <div class="hero-content">
+      <p class="hero-label fade-up" style="--d:0.1s">Delhi NCR's Premier Studio</p>
+      <h1 class="hero-headline fade-up" style="--d:0.22s">
+        Your car.<br>
+        Redefined.
+      </h1>
+      <p class="hero-sub fade-up" style="--d:0.36s">
+        Premium wrapping, PPF, ceramic coating &amp; bespoke customisation.<br class="br-hide">
+        Precision craftsmanship since 2016.
+      </p>
+      <div class="hero-actions fade-up" style="--d:0.48s">
+        <a href="services.html" class="btn-primary">Explore Services</a>
+        <a href="contact.html" class="btn-outline">Book a Consultation</a>
       </div>
-
-      <!-- RIGHT — Animated Alloy Wheel -->
-      <div class="hero-right">
-        <div class="wheel-scene" id="wheelScene">
-
-          <!-- Ground fog / shadow -->
-          <div class="wheel-ground-fog"></div>
-          <div class="wheel-shadow"></div>
-
-          <!-- Ambient glow rings -->
-          <div class="wheel-glow-ring wheel-glow-ring--outer"></div>
-          <div class="wheel-glow-ring wheel-glow-ring--inner"></div>
-
-          <!-- The wheel itself -->
-          <div class="wheel-wrapper" id="wheelWrapper">
-            <svg
-              class="wheel-svg"
-              id="wheelSvg"
-              viewBox="0 0 500 500"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Velorix forged alloy wheel"
-            >
-              <defs>
-                <!-- ── TYRE ── -->
-                <radialGradient id="tyreGrad" cx="50%" cy="42%" r="55%">
-                  <stop offset="0%"   stop-color="#333"/>
-                  <stop offset="55%"  stop-color="#181818"/>
-                  <stop offset="100%" stop-color="#090909"/>
-                </radialGradient>
-
-                <!-- ── RIM BARREL — polished aluminium ── -->
-                <linearGradient id="barrelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%"   stop-color="#bbb"/>
-                  <stop offset="18%"  stop-color="#f0f0f0"/>
-                  <stop offset="38%"  stop-color="#c8c8c8"/>
-                  <stop offset="55%"  stop-color="#555"/>
-                  <stop offset="72%"  stop-color="#383838"/>
-                  <stop offset="88%"  stop-color="#aaa"/>
-                  <stop offset="100%" stop-color="#888"/>
-                </linearGradient>
-
-                <!-- ── FACE DISH — dark gunmetal ── -->
-                <radialGradient id="dishGrad" cx="38%" cy="30%" r="68%">
-                  <stop offset="0%"   stop-color="#4a4a4a"/>
-                  <stop offset="22%"  stop-color="#2e2e2e"/>
-                  <stop offset="55%"  stop-color="#1a1a1a"/>
-                  <stop offset="100%" stop-color="#0c0c0c"/>
-                </radialGradient>
-
-                <!-- ── SPOKE face — brushed aluminium ── -->
-                <linearGradient id="spokeFaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stop-color="#e8e8e8"/>
-                  <stop offset="20%"  stop-color="#d0d0d0"/>
-                  <stop offset="45%"  stop-color="#a0a0a0"/>
-                  <stop offset="70%"  stop-color="#5a5a5a"/>
-                  <stop offset="100%" stop-color="#3a3a3a"/>
-                </linearGradient>
-
-                <!-- ── SPOKE side — dark undercut ── -->
-                <linearGradient id="spokeSideGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%"   stop-color="#1a1a1a"/>
-                  <stop offset="60%"  stop-color="#252525"/>
-                  <stop offset="100%" stop-color="#111"/>
-                </linearGradient>
-
-                <!-- ── SPOKE top edge highlight ── -->
-                <linearGradient id="spokeTopGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%"   stop-color="#fff" stop-opacity="0.85"/>
-                  <stop offset="50%"  stop-color="#ccc" stop-opacity="0.4"/>
-                  <stop offset="100%" stop-color="#888" stop-opacity="0.1"/>
-                </linearGradient>
-
-                <!-- ── ROTOR ── -->
-                <radialGradient id="rotorGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%"   stop-color="#444"/>
-                  <stop offset="50%"  stop-color="#2c2c2c"/>
-                  <stop offset="100%" stop-color="#1a1a1a"/>
-                </radialGradient>
-
-                <!-- ── CALIPER red ── -->
-                <linearGradient id="caliperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stop-color="#e03030"/>
-                  <stop offset="100%" stop-color="#8b0000"/>
-                </linearGradient>
-
-                <!-- ── HUB ── -->
-                <radialGradient id="hubGrad" cx="40%" cy="34%" r="60%">
-                  <stop offset="0%"   stop-color="#d0d0d0"/>
-                  <stop offset="35%"  stop-color="#808080"/>
-                  <stop offset="70%"  stop-color="#2e2e2e"/>
-                  <stop offset="100%" stop-color="#111"/>
-                </radialGradient>
-
-                <!-- ── CAP ── -->
-                <radialGradient id="capGrad" cx="38%" cy="32%" r="58%">
-                  <stop offset="0%"   stop-color="#b0b0b0"/>
-                  <stop offset="45%"  stop-color="#404040"/>
-                  <stop offset="100%" stop-color="#080808"/>
-                </radialGradient>
-
-                <!-- ── STUDIO LIGHT sweep ── -->
-                <linearGradient id="lightSweep" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stop-color="#fff" stop-opacity="0.13"/>
-                  <stop offset="40%"  stop-color="#fff" stop-opacity="0.05"/>
-                  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-                </linearGradient>
-
-                <!-- ── FILTERS ── -->
-                <filter id="spokeDrop" x="-25%" y="-25%" width="150%" height="150%">
-                  <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.75"/>
-                </filter>
-                <filter id="rimInner" x="-5%" y="-5%" width="110%" height="110%">
-                  <feGaussianBlur stdDeviation="3" result="blur"/>
-                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                </filter>
-
-                <!-- ── CLIP PATHS ── -->
-                <clipPath id="faceClip">  <circle cx="250" cy="250" r="196"/></clipPath>
-                <clipPath id="tyreClip">  <circle cx="250" cy="250" r="245"/></clipPath>
-
-                <!-- ── SIDEWALL TEXT PATH ── -->
-                <path id="sidewallPath"
-                  d="M250,250 m-220,0 a220,220 0 1,1 440,0 a220,220 0 1,1 -440,0"/>
-              </defs>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 1 — TYRE  (outermost dark rubber ring)
-              ══════════════════════════════════════════ -->
-              <!-- Tyre body -->
-              <circle cx="250" cy="250" r="244" fill="url(#tyreGrad)"/>
-              <!-- Tyre inner shoulder edge -->
-              <circle cx="250" cy="250" r="228" fill="none" stroke="rgba(80,80,80,0.6)" stroke-width="2"/>
-              <!-- Top-left tyre shoulder gloss arc -->
-              <path d="M 95,135 A 176,176 0 0,1 250,74" fill="none"
-                    stroke="rgba(255,255,255,0.09)" stroke-width="16" stroke-linecap="round"/>
-              <!-- Sidewall raised lettering -->
-              <text font-family="Inter,sans-serif" font-size="10.5" letter-spacing="5.5"
-                    font-weight="600" fill="rgba(255,255,255,0.11)">
-                <textPath href="#sidewallPath" startOffset="3%">
-                  VELORIX · RS SPORT · 20×9.5 · 265/35ZR20 · VELORIX · RS SPORT ·
-                </textPath>
-              </text>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 2 — RIM BARREL  (polished aluminium lip)
-              ══════════════════════════════════════════ -->
-              <circle cx="250" cy="250" r="226" fill="url(#barrelGrad)"/>
-              <!-- Barrel bead seat groove -->
-              <circle cx="250" cy="250" r="217" fill="none"
-                      stroke="rgba(0,0,0,0.55)" stroke-width="3"/>
-              <!-- Top highlight arc on barrel -->
-              <path d="M 82,160 A 186,186 0 0,1 418,160" fill="none"
-                    stroke="rgba(255,255,255,0.55)" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Barrel shadow at bottom -->
-              <path d="M 82,340 A 186,186 0 0,0 418,340" fill="none"
-                    stroke="rgba(0,0,0,0.4)" stroke-width="8" stroke-linecap="round"/>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 3 — FACE / DISH  (dark gunmetal)
-              ══════════════════════════════════════════ -->
-              <circle cx="250" cy="250" r="210" fill="url(#dishGrad)"/>
-              <!-- Step ring between barrel and face -->
-              <circle cx="250" cy="250" r="210" fill="none"
-                      stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-              <circle cx="250" cy="250" r="205" fill="none"
-                      stroke="rgba(0,0,0,0.5)" stroke-width="2"/>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 4 — BRAKE ROTOR  (peeking behind spokes)
-              ══════════════════════════════════════════ -->
-              <circle cx="250" cy="250" r="120" fill="url(#rotorGrad)"/>
-              <!-- Rotor hat inner step -->
-              <circle cx="250" cy="250" r="108" fill="none"
-                      stroke="rgba(0,0,0,0.5)" stroke-width="3"/>
-              <!-- Rotor ventilation slots — drilled holes pattern -->
-              <g fill="rgba(0,0,0,0.6)">
-                <!-- 12 oval drilled holes in two rings -->
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(0 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(30 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(60 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(90 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(120 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(150 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(180 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(210 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(240 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(270 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(300 250 250)"/>
-                <ellipse cx="250" cy="145" rx="4" ry="6" transform="rotate(330 250 250)"/>
-              </g>
-              <!-- Rotor face ring grooves -->
-              <circle cx="250" cy="250" r="130" fill="none"
-                      stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-              <circle cx="250" cy="250" r="115" fill="none"
-                      stroke="rgba(0,0,0,0.35)" stroke-width="2"/>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 5 — CALIPER  (red, behind spokes at ~8 o'clock)
-                   Positioned at ~220° — left-lower quadrant visible through window
-              ══════════════════════════════════════════ -->
-              <g transform="rotate(220 250 250)">
-                <!-- Main caliper body -->
-                <rect x="105" y="240" width="52" height="32" rx="6"
-                      fill="url(#caliperGrad)" filter="url(#spokeDrop)"/>
-                <!-- Caliper bridge ridge -->
-                <rect x="105" y="252" width="52" height="4" rx="2"
-                      fill="rgba(0,0,0,0.35)"/>
-                <!-- Piston ends -->
-                <rect x="107" y="242" width="10" height="10" rx="3"
-                      fill="rgba(255,255,255,0.2)"/>
-                <rect x="143" y="242" width="10" height="10" rx="3"
-                      fill="rgba(255,255,255,0.2)"/>
-                <!-- BREMBO text -->
-                <text x="131" y="262" text-anchor="middle" font-family="Inter,sans-serif"
-                      font-size="6" font-weight="700" fill="rgba(255,255,255,0.85)"
-                      letter-spacing="1.5">BREMBO</text>
-                <!-- Caliper bolt -->
-                <circle cx="113" cy="270" r="3" fill="rgba(200,200,200,0.4)"/>
-                <circle cx="147" cy="270" r="3" fill="rgba(200,200,200,0.4)"/>
-              </g>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 6 — 10 CURVED SPOKES
-                   Design: HRE P101 / BBS CH-R inspired
-                   Each spoke is a filled path that:
-                   · starts narrow at the hub (r≈78)
-                   · sweeps wide and curves to the rim (r≈200)
-                   · has a raised face + dark undercut side
-                   · has a bright machined top edge
-                   All 10 spokes generated via rotate() transforms
-                   at 0°, 36°, 72°, 108°, 144°, 180°, 216°, 252°, 288°, 324°
-              ══════════════════════════════════════════ -->
-
-              <!--
-                SPOKE GEOMETRY (in the "0°" position, pointing UP):
-                Hub attach: narrow region around y≈172 (hub radius ~78)
-                Rim attach:  wide flare at y≈56 (rim radius ~194)
-
-                The spoke body is a curved quadrilateral:
-                  Left edge:  cubic bezier curving left as it goes outward
-                  Right edge: cubic bezier curving right as it goes outward
-                  Top (rim):  arc segment of the rim circle
-                  Bottom (hub): arc segment of the hub circle
-
-                Path for the FACE (top surface, lighter):
-                  Start at hub-left → left-bezier up → rim-arc → right-bezier down → hub-arc → close
-
-                Path for the SIDE/UNDERCUT (darker):
-                  Thin strip on the trailing side of each spoke
-              -->
-
-              <!-- SPOKE FACE TEMPLATE (repeated 10× via rotate) -->
-              <!-- Spoke at 0° -->
-              <g transform="rotate(0 250 250)" filter="url(#spokeDrop)">
-                <!-- Spoke body — main face -->
-                <path d="
-                  M 244,172
-                  C 238,148 222,108 210,72
-                  A 194,194 0 0,1 290,72
-                  C 278,108 262,148 256,172
-                  A 8,8 0 0,1 244,172 Z
-                " fill="url(#spokeFaceGrad)"/>
-                <!-- Machined top edge highlight -->
-                <path d="
-                  M 244,172
-                  C 238,148 222,108 210,72
-                  A 194,194 0 0,1 290,72
-                  C 278,108 262,148 256,172
-                " fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <!-- Left undercut shadow -->
-                <path d="
-                  M 244,172
-                  C 238,148 222,108 210,72
-                  L 204,74
-                  C 216,110 232,150 238,172 Z
-                " fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 36° -->
-              <g transform="rotate(36 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 72° -->
-              <g transform="rotate(72 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 108° -->
-              <g transform="rotate(108 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 144° -->
-              <g transform="rotate(144 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 180° -->
-              <g transform="rotate(180 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 216° -->
-              <g transform="rotate(216 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 252° -->
-              <g transform="rotate(252 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 288° -->
-              <g transform="rotate(288 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- Spoke at 324° -->
-              <g transform="rotate(324 250 250)" filter="url(#spokeDrop)">
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172 A 8,8 0 0,1 244,172 Z" fill="url(#spokeFaceGrad)"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 A 194,194 0 0,1 290,72 C 278,108 262,148 256,172" fill="none" stroke="url(#spokeTopGrad)" stroke-width="1.8"/>
-                <path d="M 244,172 C 238,148 222,108 210,72 L 204,74 C 216,110 232,150 238,172 Z" fill="url(#spokeSideGrad)" opacity="0.85"/>
-              </g>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 7 — HUB BARREL  (concentric rings)
-              ══════════════════════════════════════════ -->
-              <!-- Hub outer ring -->
-              <circle cx="250" cy="250" r="78" fill="url(#hubGrad)"/>
-              <circle cx="250" cy="250" r="76" fill="none"
-                      stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-              <!-- Hub step -->
-              <circle cx="250" cy="250" r="68" fill="rgba(0,0,0,0.55)"/>
-              <circle cx="250" cy="250" r="60" fill="url(#hubGrad)"/>
-              <circle cx="250" cy="250" r="58" fill="none"
-                      stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-
-              <!-- 5×120 PCD bolt holes — BMW Sport spec -->
-              <g fill="rgba(8,8,8,0.9)" stroke="rgba(180,180,180,0.3)" stroke-width="1.2">
-                <circle cx="250" cy="218" r="7"   transform="rotate(0   250 250)"/>
-                <circle cx="250" cy="218" r="7"   transform="rotate(72  250 250)"/>
-                <circle cx="250" cy="218" r="7"   transform="rotate(144 250 250)"/>
-                <circle cx="250" cy="218" r="7"   transform="rotate(216 250 250)"/>
-                <circle cx="250" cy="218" r="7"   transform="rotate(288 250 250)"/>
-              </g>
-              <!-- Wheel nut hex shape hint -->
-              <g fill="rgba(140,140,140,0.2)">
-                <circle cx="250" cy="218" r="3.5" transform="rotate(0   250 250)"/>
-                <circle cx="250" cy="218" r="3.5" transform="rotate(72  250 250)"/>
-                <circle cx="250" cy="218" r="3.5" transform="rotate(144 250 250)"/>
-                <circle cx="250" cy="218" r="3.5" transform="rotate(216 250 250)"/>
-                <circle cx="250" cy="218" r="3.5" transform="rotate(288 250 250)"/>
-              </g>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 8 — CENTRE CAP
-              ══════════════════════════════════════════ -->
-              <!-- Cap body -->
-              <circle cx="250" cy="250" r="44" fill="url(#capGrad)"/>
-              <!-- Chrome outer ring -->
-              <circle cx="250" cy="250" r="44" fill="none"
-                      stroke="rgba(220,220,220,0.45)" stroke-width="2.5"/>
-              <circle cx="250" cy="250" r="40" fill="none"
-                      stroke="rgba(0,0,0,0.6)" stroke-width="1.5"/>
-              <!-- Cap dark centre -->
-              <circle cx="250" cy="250" r="37" fill="rgba(6,6,6,0.92)"/>
-              <!-- Inner chrome ring -->
-              <circle cx="250" cy="250" r="37" fill="none"
-                      stroke="rgba(180,180,180,0.25)" stroke-width="1"/>
-              <!-- V badge -->
-              <text x="250" y="256" text-anchor="middle"
-                    font-family="Sora,sans-serif" font-size="20" font-weight="800"
-                    fill="url(#spokeTopGrad)" letter-spacing="-0.5">V</text>
-              <!-- Velorix sub-text -->
-              <text x="250" y="266" text-anchor="middle"
-                    font-family="Inter,sans-serif" font-size="6.5" font-weight="600"
-                    fill="rgba(150,150,150,0.65)" letter-spacing="3.5">VELORIX</text>
-
-              <!-- ══════════════════════════════════════════
-                   LAYER 9 — STUDIO LIGHT SWEEP  (final gloss)
-              ══════════════════════════════════════════ -->
-              <ellipse cx="192" cy="182" rx="110" ry="70"
-                       fill="url(#lightSweep)"
-                       transform="rotate(-28 192 182)"
-                       clip-path="url(#faceClip)"/>
-              <!-- Small secondary hotspot -->
-              <ellipse cx="310" cy="155" rx="40" ry="22"
-                       fill="rgba(255,255,255,0.04)"
-                       transform="rotate(-10 310 155)"/>
-
-            </svg><!-- /wheel-svg -->
-          </div><!-- /wheel-wrapper -->
-
-          <!-- Floating spec badge -->
-          <div class="wheel-spec-badge">
-            <span class="spec-badge-label">FORGED</span>
-            <span class="spec-badge-sub">20" · 5×114.3</span>
-          </div>
-
-        </div><!-- /wheel-scene -->
-      </div><!-- /hero-right -->
-
-    </div><!-- /hero-split -->
-
-    <!-- Scroll hint -->
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
     </div>
 
-  </section><!-- /hero -->
+    <!-- Stats pill -->
+    <div class="hero-stats fade-up" style="--d:0.6s">
+      <div class="hstat">
+        <strong>2500<span>+</span></strong>
+        <span>Vehicles Done</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <strong>8<span>+</span></strong>
+        <span>Years Experience</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <strong>99<span>%</span></strong>
+        <span>Client Satisfaction</span>
+      </div>
+    </div>
+  </div>
 
-  <!-- Featured Services -->
-  <section class="section section-dark">
-    <div class="section-header reveal">
-      <p class="section-label">What We Do</p>
+  <!-- Scroll cue -->
+  <div class="scroll-cue">
+    <span></span>
+  </div>
+
+</section>
+
+
+<!-- ── SERVICES ──────────────────────────────────── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">What We Do</p>
       <h2 class="section-title">Premium Services</h2>
-      <p class="section-desc">From vinyl wraps to ceramic coatings, we deliver automotive perfection with unmatched precision.</p>
+      <p class="section-desc">Every service is performed by certified specialists in our climate-controlled facility using only top-tier materials.</p>
     </div>
+
     <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-icon">◆</span>
-        <h3>Car Wrapping</h3>
-        <p>Full body wraps in matte, gloss, satin, chrome delete and custom finishes using premium 3M & Avery materials.</p>
-        <a href="car-wrapping.html" class="card-link">Learn More →</a>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">◇</span>
-        <h3>Paint Protection Film</h3>
-        <p>Self-healing PPF installation to shield your paint from stone chips, scratches, and environmental damage.</p>
-        <a href="ppf.html" class="card-link">Learn More →</a>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">◈</span>
-        <h3>Ceramic Coating</h3>
-        <p>Multi-layer ceramic & graphene coatings for unparalleled gloss, hydrophobic protection, and UV resistance.</p>
-        <a href="ceramic-coating.html" class="card-link">Learn More →</a>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">▣</span>
-        <h3>Interior Customization</h3>
-        <p>Leather wrapping, ambient lighting, starlight roofs, and bespoke interior upgrades for luxury cabins.</p>
-        <a href="interior.html" class="card-link">Learn More →</a>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">⬡</span>
-        <h3>Alloy Wheels & Calipers</h3>
-        <p>Premium alloy upgrades, custom caliper painting, and precision wheel refinishing for a complete look.</p>
-        <a href="alloy-wheels.html" class="card-link">Learn More →</a>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">✧</span>
-        <h3>Detailing & Car Spa</h3>
-        <p>Deep cleaning, paint correction, engine bay detailing, and premium car spa packages for showroom finish.</p>
-        <a href="detailing.html" class="card-link">Learn More →</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Stats Section -->
-  <section class="section section-darker">
-    <div class="stats-grid reveal">
-      <div class="stat-item">
-        <h3><span class="counter" data-target="2500">0</span><span>+</span></h3>
-        <p>Vehicles Transformed</p>
-      </div>
-      <div class="stat-item">
-        <h3><span class="counter" data-target="8">0</span><span>+</span></h3>
-        <p>Years of Excellence</p>
-      </div>
-      <div class="stat-item">
-        <h3><span class="counter" data-target="50">0</span><span>+</span></h3>
-        <p>Premium Finishes</p>
-      </div>
-      <div class="stat-item">
-        <h3><span class="counter" data-target="99">0</span><span>%</span></h3>
-        <p>Client Satisfaction</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Before/After Showcase -->
-  <section class="section section-dark">
-    <div class="section-header reveal">
-      <p class="section-label">Transformations</p>
-      <h2 class="section-title">Before & After</h2>
-      <p class="section-desc">See the dramatic transformations we deliver for our clients every day.</p>
-    </div>
-    <div class="ba-grid">
-      <div class="ba-item reveal">
-        <span class="ba-label">Before</span>
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Before wrap - standard white car" loading="lazy">
-      </div>
-      <div class="ba-item reveal">
-        <span class="ba-label">After</span>
-        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&q=80" alt="After wrap - matte black finish" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- Premium Experience -->
-  <section class="section section-darker">
-    <div class="about-grid">
-      <div class="about-image reveal-left">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Velorix Customs Workshop">
-      </div>
-      <div class="about-text reveal-right">
-        <p class="section-label">Why Choose Us</p>
-        <h2>The Velorix Experience</h2>
-        <p>We don't just wrap cars — we craft automotive art. Every project receives meticulous attention to detail, using only certified premium materials from global leaders like 3M, Avery Dennison, and XPEL.</p>
-        <p>Located in the heart of Rohini, Delhi, our state-of-the-art facility is designed for precision work in a controlled, dust-free environment.</p>
-        <div class="about-features">
-          <div class="about-feature"><span class="check">✓</span><span>Certified Installers</span></div>
-          <div class="about-feature"><span class="check">✓</span><span>Dust-Free Facility</span></div>
-          <div class="about-feature"><span class="check">✓</span><span>Premium Materials Only</span></div>
-          <div class="about-feature"><span class="check">✓</span><span>Lifetime Warranty*</span></div>
-          <div class="about-feature"><span class="check">✓</span><span>Pick-up & Delivery</span></div>
-          <div class="about-feature"><span class="check">✓</span><span>100% Satisfaction</span></div>
+      <a href="car-wrapping.html" class="svc-card reveal" style="--rd:0s">
+        <div class="svc-num">01</div>
+        <div class="svc-body">
+          <h3>Car Wrapping</h3>
+          <p>Full body wraps in matte, gloss, satin &amp; colour-shift finishes using 3M and Avery Dennison materials.</p>
         </div>
-        <a href="about.html" class="btn-primary mt-40">About Our Studio →</a>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a href="ppf.html" class="svc-card reveal" style="--rd:0.08s">
+        <div class="svc-num">02</div>
+        <div class="svc-body">
+          <h3>Paint Protection Film</h3>
+          <p>Self-healing PPF that shields your paint from stone chips, scratches and road damage for years.</p>
+        </div>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a href="ceramic-coating.html" class="svc-card reveal" style="--rd:0.16s">
+        <div class="svc-num">03</div>
+        <div class="svc-body">
+          <h3>Ceramic Coating</h3>
+          <p>Multi-layer nano-ceramic &amp; graphene coatings for permanent hydrophobic protection and mirror gloss.</p>
+        </div>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a href="interior.html" class="svc-card reveal" style="--rd:0.24s">
+        <div class="svc-num">04</div>
+        <div class="svc-body">
+          <h3>Interior Customisation</h3>
+          <p>Leather upholstery, ambient lighting, starlight roofs and bespoke cabin upgrades for luxury feel.</p>
+        </div>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a href="alloy-wheels.html" class="svc-card reveal" style="--rd:0.32s">
+        <div class="svc-num">05</div>
+        <div class="svc-body">
+          <h3>Alloy Wheels &amp; Calipers</h3>
+          <p>Premium alloy upgrades, powder coating, diamond-cut refinishing and caliper painting.</p>
+        </div>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a href="detailing.html" class="svc-card reveal" style="--rd:0.4s">
+        <div class="svc-num">06</div>
+        <div class="svc-body">
+          <h3>Detailing &amp; Car Spa</h3>
+          <p>Paint correction, engine bay detailing and showroom-finish spa packages that restore perfection.</p>
+        </div>
+        <span class="svc-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ABOUT STRIP ────────────────────────────────── -->
+<section class="section section-alt" id="about-strip">
+  <div class="container">
+    <div class="about-split">
+      <div class="about-img-col reveal-left">
+        <div class="about-img-frame">
+          <img
+            src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=900&q=80&auto=format&fit=crop"
+            alt="Velorix studio interior — precision detailing in progress"
+            loading="lazy"
+          >
+        </div>
+      </div>
+      <div class="about-text-col reveal-right">
+        <p class="section-tag">Why Choose Us</p>
+        <h2 class="section-title-left">The Velorix Standard</h2>
+        <p>We don't just wrap cars — we craft automotive art. Every project receives obsessive attention to detail using only certified materials from 3M, Avery Dennison and XPEL.</p>
+        <p>Based in Rohini, Delhi, our dust-free, climate-controlled facility is built for precision. From a daily-driver Fortuner to a track-spec M3, every car leaves in showroom condition.</p>
+        <ul class="about-checks">
+          <li><span class="check-icon">✓</span> Certified Installers</li>
+          <li><span class="check-icon">✓</span> Dust-Free Facility</li>
+          <li><span class="check-icon">✓</span> Premium Materials Only</li>
+          <li><span class="check-icon">✓</span> Lifetime Warranty*</li>
+          <li><span class="check-icon">✓</span> Free Pick-up &amp; Drop</li>
+          <li><span class="check-icon">✓</span> 100% Satisfaction Guarantee</li>
+        </ul>
+        <a href="about.html" class="btn-primary mt-s">Our Story →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <!-- Gallery Preview -->
-  <section class="section section-dark">
-    <div class="section-header reveal">
-      <p class="section-label">Our Work</p>
-      <h2 class="section-title">Recent Projects</h2>
-      <p class="section-desc">A glimpse into our latest automotive transformations.</p>
+<!-- ── STATS BAR ──────────────────────────────────── -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat reveal">
+        <strong><span class="counter" data-target="2500">0</span>+</strong>
+        <span>Vehicles Transformed</span>
+      </div>
+      <div class="stat reveal" style="--rd:0.1s">
+        <strong><span class="counter" data-target="8">0</span>+</strong>
+        <span>Years of Excellence</span>
+      </div>
+      <div class="stat reveal" style="--rd:0.2s">
+        <strong><span class="counter" data-target="50">0</span>+</strong>
+        <span>Premium Finishes</span>
+      </div>
+      <div class="stat reveal" style="--rd:0.3s">
+        <strong><span class="counter" data-target="99">0</span>%</strong>
+        <span>Client Satisfaction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY PREVIEW ────────────────────────────── -->
+<section class="section" id="gallery-preview">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">Recent Work</p>
+      <h2 class="section-title">Our Transformations</h2>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600&q=80" alt="Matte Black BMW wrap" loading="lazy">
-        <span class="overlay-text">Matte Black — BMW M4</span>
+      <div class="gallery-item reveal" style="--rd:0s">
+        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=700&q=80&auto=format&fit=crop" alt="Matte Black BMW M3" loading="lazy">
+        <div class="gallery-caption">
+          <span>Matte Black Wrap</span>
+          <span>BMW M3</span>
+        </div>
       </div>
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600&q=80" alt="Satin wrap Mercedes" loading="lazy">
-        <span class="overlay-text">Satin Grey — Mercedes AMG</span>
+      <div class="gallery-item reveal" style="--rd:0.1s">
+        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=700&q=80&auto=format&fit=crop" alt="Ceramic coated Mercedes AMG" loading="lazy">
+        <div class="gallery-caption">
+          <span>Ceramic Coating</span>
+          <span>Mercedes-AMG C63</span>
+        </div>
       </div>
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Chrome delete Porsche" loading="lazy">
-        <span class="overlay-text">Full PPF — Porsche 911</span>
+      <div class="gallery-item reveal" style="--rd:0.2s">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&q=80&auto=format&fit=crop" alt="PPF on Porsche 911" loading="lazy">
+        <div class="gallery-caption">
+          <span>Full PPF</span>
+          <span>Porsche 911</span>
+        </div>
       </div>
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Custom wrapped Corvette" loading="lazy">
-        <span class="overlay-text">Gloss Red — Corvette C7</span>
+      <div class="gallery-item reveal" style="--rd:0.3s">
+        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=700&q=80&auto=format&fit=crop" alt="Satin Grey Audi RS5" loading="lazy">
+        <div class="gallery-caption">
+          <span>Satin Grey Wrap</span>
+          <span>Audi RS5</span>
+        </div>
       </div>
     </div>
-    <div class="text-center mt-60">
-      <a href="gallery.html" class="btn-secondary">View Full Gallery →</a>
+    <div class="section-foot reveal">
+      <a href="gallery.html" class="btn-outline">View Full Gallery →</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Testimonials Preview -->
-  <section class="section section-darker">
-    <div class="section-header reveal">
-      <p class="section-label">Client Voices</p>
-      <h2 class="section-title">What They Say</h2>
+
+<!-- ── TESTIMONIALS ───────────────────────────────── -->
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">Client Reviews</p>
+      <h2 class="section-title">What Our Clients Say</h2>
     </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card reveal">
-        <span class="quote">"</span>
-        <div class="stars">★★★★★</div>
-        <p>Absolutely blown away by the matte wrap on my BMW. The attention to detail is insane — every edge, every curve is perfect. Velorix is Delhi's best kept secret.</p>
-        <div class="testimonial-author">
-          <div class="avatar">AK</div>
-          <div class="info">
-            <h4>Arjun Kapoor</h4>
+    <div class="testi-grid">
+      <div class="testi-card reveal" style="--rd:0s">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Absolutely blown away by the matte wrap on my BMW. Every edge is perfect. Velorix is Delhi's best-kept secret."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <strong>Arjun Kapoor</strong>
             <span>BMW M4 Owner</span>
           </div>
         </div>
       </div>
-      <div class="testimonial-card reveal">
-        <span class="quote">"</span>
-        <div class="stars">★★★★★</div>
-        <p>Got PPF and ceramic coating done for my new Fortuner. The hydrophobic effect is unreal. Professional team, clean facility, fair pricing. Highly recommended!</p>
-        <div class="testimonial-author">
-          <div class="avatar">RS</div>
-          <div class="info">
-            <h4>Rahul Sharma</h4>
+      <div class="testi-card reveal" style="--rd:0.12s">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Got PPF and ceramic coating on my Fortuner. The hydrophobic effect is unreal. Professional team, fair pricing."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
             <span>Toyota Fortuner Owner</span>
           </div>
         </div>
       </div>
-      <div class="testimonial-card reveal">
-        <span class="quote">"</span>
-        <div class="stars">★★★★★</div>
-        <p>The interior customization they did on my Range Rover is museum-quality. Starlight roof, ambient lighting, custom leather — it's like a brand new car inside.</p>
-        <div class="testimonial-author">
-          <div class="avatar">PM</div>
-          <div class="info">
-            <h4>Priya Malhotra</h4>
-            <span>Range Rover Owner</span>
+      <div class="testi-card reveal" style="--rd:0.24s">
+        <div class="testi-stars">★★★★★</div>
+        <p>"The interior work on my Range Rover is museum-quality. Starlight roof, ambient lighting — it's like a new car."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PM</div>
+          <div>
+            <strong>Priya Malhotra</strong>
+            <span>Range Rover Sport Owner</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- CTA Section -->
-  <section class="section section-dark">
-    <div class="cta-banner reveal">
-      <h2>Ready To Transform Your Vehicle?</h2>
-      <p>Book a free consultation with our experts. Walk-ins welcome at our Rohini studio.</p>
-      <div class="hero-btns">
-        <a href="contact.html" class="btn-primary">Get Free Quote →</a>
-        <a href="https://wa.me/919999999999" class="btn-secondary">WhatsApp Us</a>
+<!-- ── CTA BANNER ─────────────────────────────────── -->
+<section class="cta-section reveal">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Ready to transform your vehicle?</h2>
+        <p>Book a free consultation at our Rohini studio. Walk-ins welcome, Mon–Sat 10AM–7PM.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+        <a href="https://wa.me/919999999999" class="btn-whatsapp" target="_blank" rel="noopener">
+          WhatsApp Us
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>Velo<span>rix</span> Customs</h3>
-        <p>Delhi NCR's premier vehicle customization studio. Precision wrapping, paint protection, ceramic coatings, and bespoke automotive styling since 2016.</p>
+        <a href="index.html" class="footer-logo">Velo<span>rix</span> Customs</a>
+        <p>Delhi NCR's premier vehicle customisation studio. Precision wrapping, PPF, ceramic coatings and bespoke automotive styling since 2016.</p>
         <div class="footer-social">
           <a href="#" aria-label="Instagram">IG</a>
           <a href="#" aria-label="YouTube">YT</a>
           <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Twitter">X</a>
         </div>
       </div>
       <div class="footer-col">
@@ -752,9 +359,9 @@
           <li><a href="car-wrapping.html">Car Wrapping</a></li>
           <li><a href="ppf.html">Paint Protection Film</a></li>
           <li><a href="ceramic-coating.html">Ceramic Coating</a></li>
-          <li><a href="interior.html">Interior Customization</a></li>
+          <li><a href="interior.html">Interior Customisation</a></li>
           <li><a href="alloy-wheels.html">Alloy Wheels</a></li>
-          <li><a href="detailing.html">Detailing & Spa</a></li>
+          <li><a href="detailing.html">Detailing &amp; Spa</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -772,20 +379,23 @@
         <ul>
           <li><a href="tel:+919999999999">+91 99999 99999</a></li>
           <li><a href="mailto:hello@velorixcustoms.com">hello@velorixcustoms.com</a></li>
-          <li><a href="#">Sector 22, Rohini, Delhi 110086</a></li>
-          <li><a href="#">Mon - Sat: 10AM - 7PM</a></li>
+          <li>Sector 22, Rohini, Delhi 110086</li>
+          <li>Mon – Sat: 10AM – 7PM</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 Velorix Customs. All rights reserved.</p>
+      <p>© 2024 Velorix Customs. All rights reserved.</p>
       <p>Crafted with precision in Delhi, India.</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/919999999999" class="whatsapp-float" aria-label="Chat on WhatsApp">💬</a>
+<!-- WhatsApp float -->
+<a href="https://wa.me/919999999999" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.553 4.094 1.522 5.815L.057 23.082a.5.5 0 00.614.665l5.56-1.453A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.6-.504-5.105-1.385l-.366-.217-3.3.863.879-3.21-.238-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
 
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
