@@ -3,20 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Velorix Customs - Premium car wrapping and customization studio in Rohini, Delhi. Book your appointment today.">
-  <title>Contact | Velorix Customs</title>
+  <meta name="description" content="Contact Velorix Customs - Book a consultation, get quotes, visit our Rohini Delhi studio. Car wrapping, PPF, ceramic coating experts.">
+  <title>Contact Us | Velorix Customs - Book Your Consultation Delhi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="loader"><div class="loader-content"><h2>Velorix</h2><div class="loader-bar"></div></div></div>
+
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-content">
+      <h2>Velorix</h2>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
   <nav class="navbar">
     <a href="index.html" class="nav-logo">Velo<span>rix</span></a>
     <div class="nav-links">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html" class="active">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="testimonials.html">Reviews</a>
+      <a href="contact.html" class="active">Contact</a>
     </div>
     <div class="hamburger"><span></span><span></span><span></span></div>
   </nav>
@@ -26,98 +39,80 @@
     <a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
   </div>
 
-  <section class="page-hero">
-    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1920&q=80');"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1920&q=85');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-subtitle">Get In Touch</p>
       <h1 class="hero-title">Contact Us</h1>
-      <p class="hero-desc">Ready to transform your vehicle? Let's talk. Free consultations available.</p>
+      <p class="hero-desc">Book a free consultation, get a quote, or just drop by our Rohini studio. We're always happy to talk cars.</p>
     </div>
   </section>
 
-
-  <!-- Contact Section -->
+  <!-- Contact Grid -->
   <section class="section section-dark">
-    <div class="section-header reveal">
-      <p class="section-label">Reach Out</p>
-      <h2 class="section-title">Let's Discuss Your Project</h2>
-      <p class="section-desc">Fill out the form below or contact us directly. We respond within 2 hours.</p>
-    </div>
     <div class="contact-grid">
-      <form class="contact-form reveal-left" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name *" required>
-        </div>
-        <div class="form-group">
-          <input type="tel" placeholder="Phone Number *" required>
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Email Address">
-        </div>
-        <div class="form-group">
-          <select required>
-            <option value="" disabled selected>Select Service *</option>
-            <option>Car Wrapping</option>
-            <option>Paint Protection Film (PPF)</option>
-            <option>Ceramic Coating</option>
-            <option>Interior Customization</option>
-            <option>Alloy Wheels & Calipers</option>
-            <option>Detailing & Car Spa</option>
-            <option>Window Tinting</option>
-            <option>Chrome Delete</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <input type="text" placeholder="Vehicle Make & Model">
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Tell us about your project..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Send Enquiry →</button>
-      </form>
-
+      <div class="contact-form reveal-left">
+        <h2>Send Us A Message</h2>
+        <p>Fill out the form and our team will get back to you within 2 hours during business hours.</p>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name *" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="Phone Number *" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address">
+          </div>
+          <div class="form-group">
+            <select name="service" required>
+              <option value="" disabled selected>Select Service *</option>
+              <option value="car-wrapping">Car Wrapping</option>
+              <option value="ppf">Paint Protection Film</option>
+              <option value="ceramic-coating">Ceramic Coating</option>
+              <option value="interior">Interior Customization</option>
+              <option value="alloy-wheels">Alloy Wheels &amp; Calipers</option>
+              <option value="detailing">Detailing &amp; Car Spa</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="text" name="vehicle" placeholder="Vehicle Make &amp; Model (e.g., BMW 320d)">
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Tell us about your project..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message &#8594;</button>
+        </form>
+      </div>
       <div class="contact-info reveal-right">
-        <div class="contact-info-item">
-          <div class="icon-box">📍</div>
-          <div>
-            <h4>Studio Location</h4>
-            <p>Plot 47, Sector 22, Rohini<br>New Delhi, Delhi 110086<br>Near Metro Pillar 392</p>
-          </div>
+        <h2>Studio Information</h2>
+        <div class="info-item">
+          <h4>&#9670; Location</h4>
+          <p>Velorix Customs<br>Plot 14, Sector 22, Rohini<br>Delhi 110086, India</p>
         </div>
-        <div class="contact-info-item">
-          <div class="icon-box">📞</div>
-          <div>
-            <h4>Phone</h4>
-            <p>+91 99999 99999<br>+91 88888 88888</p>
-          </div>
+        <div class="info-item">
+          <h4>&#9670; Phone</h4>
+          <p><a href="tel:+919999999999">+91 99999 99999</a></p>
+          <p><a href="tel:+919888888888">+91 98888 88888</a></p>
         </div>
-        <div class="contact-info-item">
-          <div class="icon-box">✉️</div>
-          <div>
-            <h4>Email</h4>
-            <p>hello@velorixcustoms.com<br>bookings@velorixcustoms.com</p>
-          </div>
+        <div class="info-item">
+          <h4>&#9670; Email</h4>
+          <p><a href="mailto:hello@velorixcustoms.com">hello@velorixcustoms.com</a></p>
         </div>
-        <div class="contact-info-item">
-          <div class="icon-box">🕐</div>
-          <div>
-            <h4>Working Hours</h4>
-            <p>Monday - Saturday: 10:00 AM - 7:00 PM<br>Sunday: By Appointment Only</p>
-          </div>
+        <div class="info-item">
+          <h4>&#9670; Business Hours</h4>
+          <p>Monday - Saturday: 10:00 AM - 7:00 PM</p>
+          <p>Sunday: By Appointment Only</p>
         </div>
-        <div class="contact-info-item">
-          <div class="icon-box">💬</div>
-          <div>
-            <h4>WhatsApp</h4>
-            <p><a href="https://wa.me/919999999999" style="color: var(--accent-blue);">Chat with us instantly →</a></p>
-          </div>
+        <div class="info-item">
+          <h4>&#9670; WhatsApp</h4>
+          <p><a href="https://wa.me/919999999999">Chat with us on WhatsApp &#8594;</a></p>
         </div>
-
-        <!-- Social Links -->
-        <div style="margin-top: 20px;">
-          <h4 style="margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">Follow Us</h4>
+        <div class="info-item">
+          <h4>&#9670; Follow Us</h4>
           <div class="footer-social">
             <a href="#">IG</a><a href="#">YT</a><a href="#">FB</a><a href="#">X</a>
           </div>
@@ -127,38 +122,44 @@
   </section>
 
 
-  <!-- Map Section -->
-  <section class="section-sm section-darker">
+  <!-- Map -->
+  <section class="section section-darker">
     <div class="section-header reveal">
       <p class="section-label">Find Us</p>
       <h2 class="section-title">Our Location</h2>
-      <p class="section-desc">Conveniently located in Sector 22, Rohini — accessible via Rohini West Metro Station.</p>
     </div>
     <div class="map-container reveal">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.573!2d77.0568!3d28.7155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDQyJzU2LjAiTiA3N8KwMDMnMjQuNSJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Velorix Customs Location"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.123456789!2d77.0688!3d28.7365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSector+22%2C+Rohini%2C+Delhi!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="450" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
-  <!-- Quick CTA -->
+  <!-- CTA -->
   <section class="section section-dark">
     <div class="cta-banner reveal">
-      <h2>Prefer A Quick Chat?</h2>
-      <p>Message us on WhatsApp for instant responses. Share photos of your car and get a quick estimate.</p>
-      <a href="https://wa.me/919999999999" class="btn-primary" style="background: #25D366;">💬 WhatsApp Now</a>
+      <h2>Prefer WhatsApp? So Do We.</h2>
+      <p>Send us photos of your car, discuss colors, get instant quotes — all on WhatsApp. Quick replies guaranteed.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919999999999" class="btn-primary">WhatsApp Us &#8594;</a>
+        <a href="tel:+919999999999" class="btn-secondary">Call Now</a>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-grid">
-      <div class="footer-brand"><h3>Velo<span>rix</span> Customs</h3><p>Delhi NCR's premier vehicle customization studio.</p>
-        <div class="footer-social"><a href="#">IG</a><a href="#">YT</a><a href="#">FB</a><a href="#">X</a></div></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="car-wrapping.html">Car Wrapping</a></li><li><a href="ppf.html">PPF</a></li><li><a href="ceramic-coating.html">Ceramic Coating</a></li><li><a href="interior.html">Interior</a></li><li><a href="alloy-wheels.html">Alloy Wheels</a></li><li><a href="detailing.html">Detailing</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Reviews</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919999999999">+91 99999 99999</a></li><li><a href="mailto:hello@velorixcustoms.com">hello@velorixcustoms.com</a></li><li><a href="#">Sector 22, Rohini, Delhi</a></li></ul></div>
+      <div class="footer-brand">
+        <h3>Velo<span>rix</span> Customs</h3>
+        <p>Delhi NCR's premier vehicle customization studio. Precision wrapping, paint protection, ceramic coatings, and bespoke automotive styling since 2016.</p>
+        <div class="footer-social"><a href="#">IG</a><a href="#">YT</a><a href="#">FB</a><a href="#">X</a></div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="car-wrapping.html">Car Wrapping</a></li><li><a href="ppf.html">Paint Protection Film</a></li><li><a href="ceramic-coating.html">Ceramic Coating</a></li><li><a href="interior.html">Interior Customization</a></li><li><a href="alloy-wheels.html">Alloy Wheels</a></li><li><a href="detailing.html">Detailing &amp; Spa</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919999999999">+91 99999 99999</a></li><li><a href="mailto:hello@velorixcustoms.com">hello@velorixcustoms.com</a></li><li><a href="#">Sector 22, Rohini, Delhi 110086</a></li><li><a href="#">Mon - Sat: 10AM - 7PM</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p>&copy; 2024 Velorix Customs. All rights reserved.</p><p>Crafted with precision in Delhi, India.</p></div>
   </footer>
-  <a href="https://wa.me/919999999999" class="whatsapp-float">💬</a>
+  <a href="https://wa.me/919999999999" class="whatsapp-float">&#128172;</a>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
